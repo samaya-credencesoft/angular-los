@@ -11,6 +11,10 @@
   width: 45%;
 }
 
+.input-full-width2 {
+  width: 29.9%;
+}
+
 
 .email-full-width {
   width: 45%;
@@ -20,16 +24,16 @@
   width: 100%;
 }
 
-.example-right-align {
-  text-align: right;
+.example-left-align {
+  text-align: left;
 }
 
-input.example-right-align::-webkit-outer-spin-button,
-input.example-right-align::-webkit-inner-spin-button {
+input.example-left-align::-webkit-outer-spin-button,
+input.example-left-align::-webkit-inner-spin-button {
   display: none;
 }
 
-input.example-right-align {
+input.example-left-align {
   -moz-appearance: textfield;
 }
 

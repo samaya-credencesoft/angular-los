@@ -75,8 +75,8 @@
 
                     <div>
                       <mat-form-field class="email-full-width">
-                        <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
-                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" name="email" [(ngModel)]="model.email">
+                        <mat-error *ngIf="emailFormControl.hasError('#email') && !emailFormControl.hasError('required')">
                           Please enter a valid email address
                         </mat-error>
                         <mat-error *ngIf="emailFormControl.hasError('required')">
@@ -85,7 +85,7 @@
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field class="input-full-width">
-                        <mat-select placeholder="Profession">
+                        <mat-select placeholder="Profession" [(ngModel)]="model.profession" name="profession">
                           <mat-option *ngFor="let employee of employees" [value]="employee.value">
                             {{ employee.viewValue }}
                           </mat-option>

@@ -1,255 +1,228 @@
 <div class="image-container set-full-height" style="background-image: url('assets/img/wizard-profile.jpg')">
   <!--   CredenceSoft Branding   -->
   <a href="https://credencesoft.co.nz">
-    <div class="logo-container">
-      <div class="logo">
-        <img src="https://img1.wsimg.com/isteam/ip/22358f8b-dc3c-4ee8-8bbb-30229ee55636/logo/45715aee-376c-42a2-8f0f-631e141b871e.png/:/rs=h:262.5">
+       <div class="logo-container">
+          <div class="logo">
+              <img src="https://img1.wsimg.com/isteam/ip/22358f8b-dc3c-4ee8-8bbb-30229ee55636/logo/45715aee-376c-42a2-8f0f-631e141b871e.png/:/rs=h:262.5">
+          </div>
+          <div class="brand">
+              CredenceSoft's SoftOne LOS
+          </div>
       </div>
-      <div class="brand">
-        CredenceSoft's SoftOne LOS
-      </div>
-    </div>
   </a>
 
-  <!--  Made By CredenceSoft  -->
-  <a href="https://credencesoft.co.nz" class="made-with-mk">
-    <div class="brand">CS</div>
-    <div class="made-with">credencesoft
-      <strong>.co.nz</strong>
-    </div>
-  </a>
+<!--  Made By CredenceSoft  -->
+<a href="https://credencesoft.co.nz" class="made-with-mk">
+  <div class="brand">CS</div>
+  <div class="made-with">credencesoft
+    <strong>.co.nz</strong>
+  </div>
+</a>
 
   <!--   Big container   -->
-
-
   <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2">
-        <!--      Wizard container        -->
-        <div class="wizard-container">
-          <div class="card wizard-card" data-color="green" id="wizardProfile">
-            <form #loanApplication="ngForm" (ngSubmit)="onSubmit()">
-              <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+                <div class="card wizard-card" data-color="green" id="wizardProfile">
+                    <form action="" method="">
+                <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
 
-              <div class="wizard-header">
-                <h3 class="wizard-title">
-                  Loan Origination System
-                </h3>
-                <h5>By this form we will get better information about you. </h5>
-              </div>
-              <div class="wizard-navigation">
-                <ul>
-                  <li>
-                    <a href="#about" data-toggle="tab">LOAN DETAILS</a>
-                  </li>
-                  <li>
-                    <a href="#account" data-toggle="tab">PERSONAL DETAILS</a>
-                  </li>
-                  <li>
-                    <a href="#address" data-toggle="tab">APPLY LOAN</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="tab-content">
-                <div class="tab-pane" id="about">
-                  <div class="center1">
-                    <!-- 1st form -->
-                    <!-- Customer Category and Mobile Number -->
-
-                    <div>
-                      <mat-form-field class="input-full-width">
-                        <mat-select placeholder="Customer Category" [(ngModel)]="model.customerCategory" name="customerCategory">
-                          <mat-option *ngFor="let customer of customers" [value]="customer.viewValue">
-                            {{ customer.viewValue }}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width" hintLabel="10 digit Mobile Number">
-                        <input matInput #input maxlength="10" pattern="[0-9]{10}" placeholder="Mobile Number" [(ngModel)]="model.mobileNumber" #mobileNumber="ngModel"  name="mobileNumber">
-
-                      </mat-form-field>
-                    </div>
-
-                    <!-- Email and Employement Type -->
-
-                    <div>
-                      <mat-form-field class="email-full-width">
-                        <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" name="email" [(ngModel)]="model.email">
-                        <mat-error *ngIf="emailFormControl.hasError('#email') && !emailFormControl.hasError('required')">
-                          Please enter a valid email address
-                        </mat-error>
-                        <mat-error *ngIf="emailFormControl.hasError('required')">
-                          Email is
-                          <strong>required</strong>
-                        </mat-error>
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width">
-                        <mat-select placeholder="Profession" [(ngModel)]="model.profession" name="profession">
-                          <mat-option *ngFor="let employee of employees" [value]="employee.value">
-                            {{ employee.viewValue }}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                    </div>
-
-                    <!-- Annual Income and Loan Type -->
-
-                    <div>
-                      <mat-form-field class="input-full-width">
-                        <input matInput placeholder="Annual Income" class="example-right-align" [(ngModel)]="model.annualIncome" name="annualIncome">
-                        <span matPrefix>₹&nbsp;</span>
-                        <span matSuffix>.00</span>
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width">
-                        <mat-select placeholder="Loan Type" [(ngModel)]="model.loanType" name="loanType">
-                          <mat-option *ngFor="let ltype of ltypes" [value]="ltype.value">
-                            {{ ltype.viewValue }}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                    </div>
-
-                    <!-- Loan Amount and Loan Tenure -->
-
-                    <div>
-                      <mat-form-field class="input-full-width">
-                        <input matInput placeholder="Loan Amount" class="example-right-align" [(ngModel)]="model.loanAmount" name="loanAmount">
-                        <span matPrefix>₹&nbsp;</span>
-                        <span matSuffix>.00</span>
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width">
-                        <input matInput placeholder="Loan Tenure" [(ngModel)]="model.loanTenure" name="loanTenure">
-                      </mat-form-field>
-                    </div>
+                <div class="wizard-header">
+                    <h3 class="wizard-title">
+                      Loan Origination System
+                    </h3>
+                    <h5>By this form we will get better information about you. </h5>
                   </div>
-                </div>
-                <div class="tab-pane" id="account">
-                  <div class="center1">
-                    <!-- 2nd form -->
-                    <!-- Title and Name -->
-
-                    <div>
-                      <mat-form-field class="input-full-width">
-                        <mat-select placeholder="Title" [(ngModel)]="model.title" name="title">
-                          <mat-option *ngFor="let title of titles" [value]="title.value">
-                            {{ title.viewValue }}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width">
-                        <input matInput placeholder="Name" id="name" [(ngModel)]="model.name" name="name" #name="ngModel" />
-
-                      </mat-form-field>
-                    </div>
-
-                    <!-- Aadhar and Pan -->
-
-                    <div>
-                      <mat-form-field class="input-full-width" hintLabel="Your 12 digit aadhar">
-                        <input matInput maxlength="12" placeholder="Aadhar" [(ngModel)]="model.aadharNumber" name="aadharNumber">
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width" hintLabel="Your 10 digit pan ">
-                        <input matInput maxlength="10" placeholder="Pan" [(ngModel)]="model.pan" name="pan">
-
-                      </mat-form-field>
-                    </div>
-
-                    <!-- Gender and Date of Birth -->
-
-                    <div>
-                      <mat-form-field class="input-full-width">
-                        <mat-select placeholder="Gender" [value]="gender.value" [(ngModel)]="model.gender" name="gender" #gender="ngModel">
-                          <mat-option *ngFor="let gender of genders">
-                            {{ gender.viewValue }}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
-                      <mat-form-field class="date-full-width">
-                        <input matInput [matDatepicker]="picker" placeholder="Date of birth" [(ngModel)]="model.dob" name="dob">
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                      </mat-form-field>
-                    </div>
-
-                    <!-- Pin Code and Landmark -->
-
-                    <div>
-                      <mat-form-field class="input-full-width" hintLabel="Your 6 digit pincode">
-                        <input matInput maxlength="6" placeholder="Pin Code" (change)="getAddressDetailsByPostCode(model.pinCode)" [(ngModel)]="model.pinCode"
-                          name="pinCode">
-
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width" hintLabel="Max 10 character">
-                        <input matInput #input maxlength="10" placeholder="Area/Land mark" [(ngModel)]="model.landmark" name="landmark">
-
-                      </mat-form-field>
-                    </div>
-
-                    <!-- Full Address -->
-
-                    <div>
-                      <mat-form-field class="address-full-width" hintLabel="Max 100 character">
-                        <input matInput #input maxlength="100" placeholder="Address" [(ngModel)]="model.address" name="address">
-                        <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
-                      </mat-form-field>
-                    </div>
-
-                    <!-- District and State -->
-                    <div>
-                      <mat-form-field class="input-full-width">
-                        <input matInput placeholder="District" [(ngModel)]="model.addressCity" required name="addressCity">
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width">
-                        <input matInput placeholder="State" [(ngModel)]="model.addressState" required name="addressState">
-                      </mat-form-field>
-                      <mat-form-field class="input-full-width">
-                        <input matInput placeholder="Country" [(ngModel)]="model.addressCountry" required name="addressCountry">
-                      </mat-form-field>
-                    </div>
-
+                  <div class="wizard-navigation">
+                    <ul>
+                      <li>
+                        <a href="#about" data-toggle="tab">LOAN DETAILS</a>
+                      </li>
+                      <li>
+                        <a href="#account" data-toggle="tab">PERSONAL DETAILS</a>
+                      </li>
+                    </ul>
                   </div>
-                </div>
-                <div class="tab-pane" id="address">
-                  <div class="center1">
-                      <div class="form-group">
-                          <label for="name">Name</label>
-                          {{model.name}}
-                          <label for="mobileNo">Mobile Number</label>
-                          {{model.mobileNumber}}
-                        </div>
-                  </div>
-                </div>
+
+                        <div class="tab-content">
+                            <div class="tab-pane" id="about">
+                              <div class="center1">
+                                <!-- 1st form -->
+
+           <!-- Title and Name -->
+          
+          <div>
+              <mat-form-field class="input-full-width">
+                <mat-select placeholder="Title" [(ngModel)]="model.title" name="title">
+                  <mat-option *ngFor="let title of titles" [value]="title.viewValue">
+                    {{ title.viewValue }}
+                  </mat-option>
+                </mat-select>
+                </mat-form-field>
+                <mat-form-field class="input-full-width">
+                  <input matInput placeholder="Name" [(ngModel)]="model.name" name="name" #name="ngModel">
+                </mat-form-field>
               </div>
-              <div class="wizard-footer">
-                <div class="pull-right">
-                  <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
-                  <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='submit' value='Submit' (click)="onSubmit();"
-                  />
-                </div>
-                <div class="pull-left">
-                  <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
-                </div>
-                <div class="clearfix"></div>
-              </div>
-            </form>
-          </div>
+          <!-- Customer Category and Mobile Number -->
+          
+          <div>
+              <mat-form-field class="input-full-width">
+                <mat-select placeholder="Customer Category" [(ngModel)]="model.customerCategory" name="customerCategory">
+                  <mat-option *ngFor="let customer of customers" [value]="customer.viewValue">
+                    {{ customer.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+                <mat-form-field class="input-full-width" hintLabel="10 digit Mobile Number">
+                  <input matInput #input maxlength="10" pattern="[0-9]{10}" placeholder="Mobile Number" [(ngModel)]="model.mobileNumber" #mobileNumber="ngModel"  name="mobileNumber">
+      
+                </mat-form-field>
+            </div>
+            
+              <!-- Email and Employement Type -->
+            
+              <div>
+                <mat-form-field class="email-full-width">
+                  <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher" name="email" [(ngModel)]="model.email">              
+                  <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              <mat-form-field class="input-full-width">
+                <mat-select placeholder="Profession" [(ngModel)]="model.profession" name="profession">
+                  <mat-option *ngFor="let employee of employees" [value]="employee.viewValue">
+                    {{ employee.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            
+            <!-- Annual Income and Loan Type -->
+            
+            <div>
+              <mat-form-field class="input-full-width">
+                <input matInput placeholder="Annual Income" class="example-left-align" [(ngModel)]="model.annualIncome" name="annualIncome">
+                <span matPrefix>₹&nbsp;</span>
+                <span matSuffix>.00</span>
+              </mat-form-field>
+              <mat-form-field class="input-full-width">
+                <mat-select placeholder="Loan Type" [(ngModel)]="model.loanType" name="loanType">
+                  <mat-option *ngFor="let ltype of ltypes" [value]="ltype.viewValue">
+                    {{ ltype.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            
+            <!-- Loan Amount and Loan Tenure -->
+            
+            <div>
+              <mat-form-field class="input-full-width">
+                <input matInput placeholder="Loan Amount" class="example-left-align" [(ngModel)]="model.loanAmount" name="loanAmount">
+                <span matPrefix>₹&nbsp;</span>
+                <span matSuffix>.00</span>
+              </mat-form-field>
+              <mat-form-field class="input-full-width">
+                <input matInput placeholder="Loan Tenure" [(ngModel)]="model.loanTenure" name="loanTenure">
+              </mat-form-field>
+            </div> 
+          </div> 
         </div>
-        <!-- wizard container -->
-      </div>
-    </div>
-    <!-- end row -->
+        <div class="tab-pane" id="account">
+          <div class="center1">
+              <!-- 2nd form -->
+              <!-- Aadhar and Pan -->
+              
+              <div>
+                <mat-form-field class="input-full-width" hintLabel="Your 12 digit aadhar">
+                  <input matInput  #input maxlength="12" placeholder="Aadhar" [(ngModel)]="model.aadharNumber" name="aadharNumber">
+                </mat-form-field>
+                <mat-form-field class="input-full-width" hintLabel="Your 10 digit pan ">
+                  <input matInput #input maxlength="10"  placeholder="Pan" [(ngModel)]="model.pan" name="pan">
+      
+                </mat-form-field>
+              </div>
+              
+              <!-- Gender and Date of Birth -->
+              
+              <div>
+              <mat-form-field class="input-full-width">
+                <mat-select placeholder="Gender" [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+                  <mat-option *ngFor="let gender of genders" [value]="gender.viewValue">
+                    {{ gender.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="date-full-width">  
+                <input matInput [matDatepicker]="picker" placeholder="Date of birth" [(ngModel)]="model.dob" name="dob">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              
+              <!-- Pin Code and Landmark -->
+              
+              <div>
+                <mat-form-field class="input-full-width" hintLabel="Your 6 digit pincode">
+                  <input matInput #input maxlength="6" placeholder="Pin Code" (change)="getAddressDetailsByPostCode(model.pinCode)" [(ngModel)]="model.pinCode" name="pinCode">
+                </mat-form-field>
+                <mat-form-field class="input-full-width" hintLabel="Max 10 character">
+                  <input matInput  #input maxlength="10" placeholder="Area/Land mark" [(ngModel)]="model.landmark" name="landmark">
+                </mat-form-field>
+              </div>
 
-  </div>
-  <!--  big container -->
+              <!-- Full Address -->
+              
+              <div>
+                <mat-form-field class="address-full-width" hintLabel="Max 100 character">
+                  <input matInput #input maxlength="100" placeholder="Address" [(ngModel)]="model.address" name="address">
+                  <mat-hint align="end">{{input.value?.length || 0}}/100</mat-hint>
+                </mat-form-field>
+              </div>
+              
+              <!-- District and State -->
+              
+              <div>
+                <mat-form-field class="input-full-width2">
+                  <input matInput placeholder="District" [(ngModel)]="model.addressCity" required name="addressCity">
+                </mat-form-field>
+                <mat-form-field class="input-full-width2">
+                  <input matInput placeholder="State" [(ngModel)]="model.addressState" required name="addressState">
+                </mat-form-field>
+                <mat-form-field class="input-full-width2">
+                  <input matInput placeholder="Country" [(ngModel)]="model.addressCountry" required name="addressCountry">
+                </mat-form-field>
+              </div>
+              
+            </div>
+          </div>
+                        </div>
+                        <div class="wizard-footer">
+                            <div class="pull-right">
+                                <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
+                                <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='submit' value='Submit' (click)="onSubmit();" />
+                            </div>
+
+                            <div class="pull-left">
+                                <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div> <!-- wizard container -->
+        </div>
+      </div><!-- end row -->
+  </div> <!--  big container -->
 
   <div class="footer">
-    <div class="container text-center">
-      Made with
-      <i class="fa fa-heart heart"></i> by
-      <a href="https://credencesoft.co.nz">CredenceSoft</a>.
-      <br>
-      <a href="https://credencesoft.co.nz">Copyright © 2018 CredenceSoft - All Rights Reserved.</a>
-    </div>
+      <div class="container text-center">
+           Made with <i class="fa fa-heart heart"></i> by <a href="https://credencesoft.co.nz">CredenceSoft</a>. <br> <a href="https://credencesoft.co.nz">Copyright © 2018 CredenceSoft -  All Rights Reserved.</a>
+      </div>
   </div>
 </div>
