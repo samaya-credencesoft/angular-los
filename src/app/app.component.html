@@ -106,7 +106,7 @@
             
             <div>
               <mat-form-field class="input-full-width">
-                <input matInput placeholder="Annual Income" class="example-left-align" [(ngModel)]="model.annualIncome" name="annualIncome">
+                <input matInput placeholder="Annual Income" #input maxlength="8" pattern="[0-9]{8}" class="example-left-align" [(ngModel)]="model.annualIncome" name="annualIncome">
                 <span matPrefix>₹&nbsp;</span>
                 <span matSuffix>.00</span>
               </mat-form-field>
@@ -123,12 +123,12 @@
             
             <div>
               <mat-form-field class="input-full-width">
-                <input matInput placeholder="Loan Amount" class="example-left-align" [(ngModel)]="model.loanAmount" name="loanAmount">
+                <input matInput placeholder="Loan Amount" #input maxlength="8" pattern="[0-9]{8}" class="example-left-align" [(ngModel)]="model.loanAmount" name="loanAmount">
                 <span matPrefix>₹&nbsp;</span>
                 <span matSuffix>.00</span>
               </mat-form-field>
               <mat-form-field class="input-full-width">
-                <input matInput placeholder="Loan Tenure" [(ngModel)]="model.loanTenure" name="loanTenure">
+                <input matInput #input maxlength="3" pattern="^(1[0-9][0-9]|2[0-4][0-9]|3[0-5][0-9]|360)$" placeholder="Loan Tenure in Months e.g. 24,30,36 months" [(ngModel)]="model.loanTenure" name="loanTenure">
               </mat-form-field>
             </div> 
           </div> 
