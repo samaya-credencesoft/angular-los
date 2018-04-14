@@ -16,15 +16,15 @@ import { MatButtonModule } from '@angular/material/button';
 import {Http,Response,RequestOptions,Headers,HttpModule} from '@angular/http';
 import { Logger } from './common/logger.service';
 import { AddressService } from './common/address.service';
-import { CustomerOnboardingService } from './los/los.service';
+import { CustomerOnboardingService } from './los/los.loanapplication.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
-
-
-
+import {AuthService} from './common/auth.service';
+import {AuthGuard} from './common/auth-guard.service';
+import {routing} from './app.routing';
+import {AppComponent} from './app.component'
 @NgModule({
   imports: [
     BrowserModule,
@@ -40,14 +40,27 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatDatepickerModule,
     MatMomentDateModule,
     MatButtonModule,
-    HttpModule,     
-
-    // Material Modules
-    AppMaterialModules
+    HttpModule,  
+    AppMaterialModules,
+    routing
+   
     ],
-  declarations: [LoanApplicationNew, LoginComponent, SignupComponent, HomeComponent, DashboardComponent],
-  bootstrap: [LoanApplicationNew],
-  providers:[Logger,AddressService,CustomerOnboardingService]
+  declarations: [
+     LoanApplicationNew,
+     LoginComponent, 
+     SignupComponent, 
+     HomeComponent, 
+     DashboardComponent,
+     AppComponent
+    ],
+  bootstrap: [AppComponent],
+  providers:[
+    Logger,
+    AddressService,
+    CustomerOnboardingService,
+    AuthService,
+    AuthGuard
+  ]
 
 })
 export class AppModule { }

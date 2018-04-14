@@ -15,14 +15,15 @@ import {
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
+  import {API_URL} from '../app.component';
   @Injectable()
 export class CustomerOnboardingService {
     constructor(
         private logger:Logger,
         private http:Http
     ){}
-    public API = 'http://localhost:8080';
-    public LOAN_APPLICATION_API = this.API + '/';
+
+    public LOAN_APPLICATION_API = API_URL+ '/saveLoanApplication';
     public createLoanApplication(loanApplication:LoanApplication) {
         console.log(LoanApplication);
           return this.http.post(this.LOAN_APPLICATION_API, loanApplication).subscribe

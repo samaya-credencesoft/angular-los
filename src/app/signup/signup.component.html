@@ -1,3 +1,33 @@
-<p>
-  signup works!
-</p>
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <div>
+        <label for="firstname">First Name: </label>
+        <input id="firstname" type="text"
+               [(ngModel)]="model.firstname" #firstname="ngModel" name="firstname"
+               pInputText>
+    </div>
+    <div>
+        <label for="lastname">Last Name: </label>
+        <input id="lastname" type="text"
+               [(ngModel)]="model.lastname" #lastname="ngModel" name="lastname"
+               pInputText>
+    </div>
+  <div>
+      <label for="email">Email: </label>
+      <input id="email" type="email"
+             [(ngModel)]="model.email" #firstname="ngModel" name="email"
+             pInputText>
+  </div>
+  <div>
+      <label for="CompanyName">Company Name: </label>
+      <input id="companyName" type="text"
+             [(ngModel)]="model.companyName" #companyName="ngModel" name="companyName"
+             pInputText>
+  </div>
+  <div>
+      <label for="mobile">Mobile: </label>x
+      <input id="mobile" type="mobile"
+             [(ngModel)]="model.mobile" #firstname="ngModel" name="mobile"
+             pInputText>
+  </div>
+  <button pButton type="submit" label="Register"></button>
+</form>

@@ -29,13 +29,13 @@ export class AddressService {
     console.log('URL for google api:'+url);
     this.http.get(url).subscribe(
       res =>{
-        this.logger.log("Hello"+res.json().results[0].address_components[0].long_name);
-        this.logger.log("Country Json"+res.json().results[0].address_components[3].long_name); 
+    //  this.logger.log("Hello"+res.json().results[0].address_components[0].long_name);
+     // this.logger.log("Country Json"+res.json().results[0].address_components[3].long_name); 
       loanApplication.pinCode=res.json().results[0].address_components[0].long_name;
       loanApplication.addressCity=res.json().results[0].address_components[1].long_name;
       loanApplication.addressState=res.json().results[0].address_components[2].long_name;  
       loanApplication.addressCountry=res.json().results[0].address_components[3].long_name; 
-      this.logger.log("Country loanApplication"+loanApplication.addressCountry); 
+      //this.logger.log("Country loanApplication"+loanApplication.addressCountry); 
     },
   
     (err: HttpErrorResponse) => {

@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import {ErrorStateMatcher} from '@angular/material/core';
 
 import { AddressService } from './../common/address.service';
-import { CustomerOnboardingService } from './../los/los.service';
+import { CustomerOnboardingService } from './../los/los.loanapplication.service';
 import { Logger } from './../common/logger.service';
 import { LoanApplication } from './loan.Application';
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -24,7 +24,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-newloanapplication',
   templateUrl: './newloanapplication.component.html',
  //templateUrl: './test.html',
   styleUrls: ['./newloanapplication.component.css'],
