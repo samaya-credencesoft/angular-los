@@ -53,7 +53,7 @@ export class AppComponent {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-    
+    this.loanApplication=new LoanApplication('','','','','','','','','','','','','','','','','','','','');
   }
   getAddressDetailsByPostCode(pincode) {
     
@@ -63,6 +63,12 @@ export class AppComponent {
     this.loanApplication=this.adddressService.getAddressDetailsByPostCode(this.loanApplication);
     this.model=this.loanApplication;
   
+  }
+  saveLoanApplication(){
+  
+    this.logger.log("BeforeSubmit Check"+JSON.stringify(this.model) ) ;
+    this.loanApplication=this.model;
+  //  this.custOnbService.createLoanApplication(this.loanApplication)
   }
 storeLoanApplication(){
   
