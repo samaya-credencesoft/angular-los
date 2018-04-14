@@ -1,4 +1,4 @@
-import { Logger } from './logger.service';
+import { Logger } from './../common/logger.service';
 import {
     Http,
     Response,
@@ -11,7 +11,7 @@ import {
   import { HttpErrorResponse } from '@angular/common/http';
   import { Injectable } from '@angular/core';
   import { Observable } from 'rxjs/Observable';
-  import { LoanApplication } from './loan.Application';
+  import { LoanApplication } from './../application/loan.Application';
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

@@ -10,9 +10,9 @@ HttpModule
 import { HttpErrorResponse } from '@angular/common/http';
 import {ErrorStateMatcher} from '@angular/material/core';
 
-import { AddressService } from './address.service';
-import { CustomerOnboardingService } from './los.service';
-import { Logger } from './logger.service';
+import { AddressService } from './../common/address.service';
+import { CustomerOnboardingService } from './../los/los.service';
+import { Logger } from './../common/logger.service';
 import { LoanApplication } from './loan.Application';
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -25,12 +25,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './newloanapplication.component.html',
  //templateUrl: './test.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./newloanapplication.component.css'],
   providers:  [AddressService,CustomerOnboardingService,Logger]
 })
-export class AppComponent {
+export class LoanApplicationNew {
   
   title = 'app';
   isLinear = false;
