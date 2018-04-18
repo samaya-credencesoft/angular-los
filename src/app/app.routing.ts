@@ -6,6 +6,7 @@ import {AuthGuard} from './common/auth-guard.service';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoanApplicationNew} from './application/newloanapplication.component'
 import {SignupComponent} from './signup/signup.component'
+import {ResetPasswordComponent} from './reset-password/reset-password.component';
 
 const appRoutes: Routes = [
     {
@@ -35,6 +36,11 @@ const appRoutes: Routes = [
     {
         path: 'signup',
         component: SignupComponent
+       
+    },
+    {
+        path: 'resetPassword',
+        component: ResetPasswordComponent
        
     }
 ];

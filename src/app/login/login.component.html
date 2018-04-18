@@ -1,3 +1,64 @@
-<p>
-  login works!
-</p>
+<nav class="navbar navbar-transparent navbar-fixed-top" id="sectionsNav">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">CredenceSoft</a>
+        </div>
+       
+    </div>
+  </nav>
+  
+  <div class="image-container set-full-height" style="background-image: url('assets/img/wizard-profile.jpg')">
+   
+  <!--  Made By CredenceSoft  -->
+  <a href="https://credencesoft.co.nz" class="made-with-mk">
+    <div class="brand">CS</div>
+    <div class="made-with">credencesoft
+      <strong>.co.nz</strong>
+    </div>
+  </a>
+  
+    <!--   Big container   -->
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+              <!--      Wizard container        -->
+              <div class="wizard-container">
+                  <div class="card wizard-card" data-color="green" id="wizardProfile">
+                      <form (ngSubmit)="onLogin(loginForm.value)" #loginForm="ngForm">
+                  <!--        You can switch " data-color="purple" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+  
+                  <div class="wizard-header">
+                      <h3 class="wizard-title">
+                        Sign In
+                      </h3>
+                      <h5>Please sign in here.</h5>
+                  </div>
+                      <div>
+                        <mat-form-field class="center1">
+                          <input matInput placeholder="Email" name="email" ngModel #email="ngModel">
+                        </mat-form-field>
+                      </div>
+                        <div>
+                          <mat-form-field class="center2">
+                            <input matInput placeholder="Password" name="password" ngModel #password="ngModel">
+                          </mat-form-field>
+                      </div>
+                      <div class="right-side-button">
+                        <button class="btn btn-danger btn-round" data-toggle="modal" data-target="#loginModal">
+                          Login
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+              </div> <!-- wizard container -->
+          </div>
+        </div><!-- end row -->
+    </div> <!--  big container -->
+  
+    <div class="footer">
+        <div class="container text-center">
+             Made with <i class="fa fa-heart heart"></i> by <a href="https://credencesoft.co.nz">CredenceSoft</a>. <br> <a href="https://credencesoft.co.nz">Copyright © 2018 CredenceSoft -  All Rights Reserved.</a>
+        </div>
+    </div>
+  </div>

@@ -24,7 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {AuthService} from './common/auth.service';
 import {AuthGuard} from './common/auth-guard.service';
 import {routing} from './app.routing';
-import {AppComponent} from './app.component'
+import {AppComponent} from './app.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component'
 @NgModule({
   imports: [
     BrowserModule,
@@ -51,7 +52,8 @@ import {AppComponent} from './app.component'
      SignupComponent, 
      HomeComponent, 
      DashboardComponent,
-     AppComponent
+     AppComponent,
+     ResetPasswordComponent
     ],
   bootstrap: [AppComponent],
   providers:[
