@@ -10,6 +10,11 @@ import {User} from '../signup/user';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+    designations = [
+        {value: 'Team Lead', viewValue: 'Team Lead'},
+        {value: 'Floor Manger', viewValue: 'Floor Manger'},
+        {value: 'Project Manager', viewValue: 'Project Manger'}
+      ];
   model: User;
   messages: Message[] = [];
 

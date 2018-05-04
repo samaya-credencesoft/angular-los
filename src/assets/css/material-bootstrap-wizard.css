@@ -1791,6 +1791,77 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 
 }
 
+.login-button{
+  margin: auto;
+  left: 59%;
+    top: 80%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+.right-side-button {
+
+  margin: auto;
+  left: 58%;
+    top: 80%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+}
+
+
+
+.data-button{
+  margin: auto;
+  left: 30%;
+    top: 30%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+.downloads-button{
+  margin: auto;
+  left: 30%;
+    top: 45%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+.reports-button{
+  margin: auto;
+  left: 30%;
+    top: 60%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+.logout-button{
+  margin: auto;
+  left: 30%;
+    top: 75%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+
+
+
 .card {
   display: inline-block;
   position: relative;

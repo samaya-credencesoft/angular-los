@@ -25,7 +25,12 @@ import {AuthService} from './common/auth.service';
 import {AuthGuard} from './common/auth-guard.service';
 import {routing} from './app.routing';
 import {AppComponent} from './app.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component'
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { DataComponent } from './dashboard/data/data.component';
+import { DownloadsComponent } from './dashboard/downloads/downloads.component';
+import { ReportsComponent } from './dashboard/reports/reports.component';
+import { LogoutComponent } from './dashboard/logout/logout.component'
 @NgModule({
   imports: [
     BrowserModule,
@@ -53,7 +58,12 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
      HomeComponent, 
      DashboardComponent,
      AppComponent,
-     ResetPasswordComponent
+     ResetPasswordComponent,
+     ForgotPasswordComponent,
+     DataComponent,
+     DownloadsComponent,
+     ReportsComponent,
+     LogoutComponent
     ],
   bootstrap: [AppComponent],
   providers:[

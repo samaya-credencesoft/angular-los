@@ -28,38 +28,44 @@
                         </mat-form-field>
                     </div>
                     <div>
-                        <mat-form-field class="center0">
+                        <mat-form-field class="center1">
                             <input matInput id="lastName" type="text" ngModel #lastName="ngModel" name="lastName" 
                                 placeholder="Last Name" >
                         </mat-form-field>
                     </div>
                     <div>
-                        <mat-form-field class="center0">
+                        <mat-form-field class="center2">
                             <input matInput id="email" type="email" ngModel #firstname="ngModel" name="email" 
                                 placeholder="Email" >
                         </mat-form-field>
                     </div>
                     <div>
-                        <mat-form-field class="center0">
+                        <mat-form-field class="center3">
                             <input matInput id="companyName" type="text" ngModel #companyName="ngModel" name="companyName" 
                                 placeholder="Company Name" >
                         </mat-form-field>
                     </div>
                 <div>
-                    <label for="designation">Designation: </label>
-                    <select ngModel #designation="ngModel" name="designation">
-                        <option value="Team Lead">Team Lead</option>
-                        <option value="Manager">Manager</option>
-                        <option value="Project Manager">Project Manager</option>
-                    </select>
+                        <mat-form-field class="center4">
+                                <mat-select placeholder="Designation">
+                                  <mat-option *ngFor="let designation of designations" [value]="designation.value">
+                                    {{ designation.viewValue }}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              
                 </div>
                 <div>
-                        <mat-form-field class="center0">
+                        <mat-form-field class="center5">
                                 <input matInput id="mobile" type="number" ngModel #firstname="ngModel" name="mobile"
                                  placeholder="Mobile Number" >
                             </mat-form-field>
                 </div>
-                <button class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+                    <div class="right-side-button">
+                        <button [disabled]="!registerForm.valid" class="btn btn-danger btn-round" data-toggle="modal" data-target="#registrationModal">
+                                Register
+                        </button>
+                    </div>
                 </form>
 </div>
 </div>
