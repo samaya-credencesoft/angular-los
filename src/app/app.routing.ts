@@ -16,28 +16,17 @@ import { LogoutComponent } from './dashboard/logout/logout.component'
 
 const appRoutes: Routes = [
     {
-        path: '',
-        redirectTo: '/auth',
-        pathMatch: 'full'
-    },
-    {
-        path: 'auth',
-        component: LoginComponent
-    },
-    {
         path: 'home',
         component: HomeComponent,
         canActivate: [AuthGuard]
     },
     {
-        path: 'application',
+        path: '',
         component: LoanApplicationNew
-       
     },
     {
         path: 'signin',
         component: LoginComponent
-       
     },
     {
         path: 'signup',
@@ -56,7 +45,8 @@ const appRoutes: Routes = [
     },
     {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuard]
        
     },
     {

@@ -4,7 +4,7 @@ export class User {
     email: string;
     password: string;
     name: string;
-    mobile: number;
+    mobileNumber: number;
     companyName: string;
     designation:string;
 
@@ -14,7 +14,7 @@ export class User {
     public static isNull(user: User): boolean {
         return user.email === null &&
             user.id === null &&
-            user.mobile === null &&
+            user.mobileNumber === null &&
             user.companyName === null &&
             user.name === null &&
             user.designation ===null

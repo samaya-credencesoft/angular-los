@@ -37,42 +37,25 @@ export class ResetPasswordComponent implements OnInit {
   selectedId : any;
 
   ngOnInit() {
-    // this.route.paramMap.subscribe(
-    //   params =>{
-    //     this.selectedId = params['id'];
-    //     //console.log(this.router.url);
-    //   } 
-    // );
     this.selectedId = this.route.snapshot.queryParamMap.get("id");
   }
 
   //Password Reset function
-  resetPassword(password){
-    console.log(password);
-    return this.http.post(this.PASSWORD_RESET_API, password).subscribe
-    ( 
-      data => {
-          this.logger.log(data.json)
-      alert("Successfully Login.");
-    });
-    //password and confirm password matches 
-    // if(value.password == value.confirmPassword){
-    //   console.log("matched");
-    //   const req = this.http.post('localhost:4200', {
-    //   body: value
-    // })
-    //   .subscribe(
-    //     res => {
-    //       console.log(res);
-    //     },
-    //     err => {
-    //       console.log("Error occured");
-    //     }
-    //   );
-    // }else{
-    //   alert("password doesn't matched");
-    // }
-    
+  resetPassword(form_val){
+    console.log(form_val);
+    if(form_val.password == form_val.confirmPassword)
+    {
+      var credentials = {"password":form_val.password, "uid":this.selectedId};
+      return this.http.post(this.PASSWORD_RESET_API,credentials ).subscribe
+      ( 
+        data => {
+            this.logger.log(data.json);
+            this.router.navigate(['/signin']);
+      });
+    }else{
+      console.log("Password dosent Match");
+    }
+  
   }
 }
 
