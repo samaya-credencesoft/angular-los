@@ -44,10 +44,20 @@
                             <input matInput placeholder="Password" name="password" ngModel #password="ngModel">
                           </mat-form-field>
                       </div>
-                      <div class="login-button">
-                        <button class="btn btn-danger btn-round" data-toggle="modal" data-target="#loginModal">
+                      <div class="signin-button">
+                        <button class="btn btn-danger btn-round">
                           Login
                         </button>
+                      </div>
+                      <div class="new-user-signup">
+                        <u href="" [routerLink]="['/signup']">
+                         New User ? Please signup here.
+                        </u>
+                      </div>
+                      <div class="forget-password-link">
+                        <u href="" [routerLink]="['/forgotPassword']">
+                         Forget Password ? click here. 
+                        </u>
                       </div>
                     </form>
                   </div>

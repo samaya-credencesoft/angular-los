@@ -1791,9 +1791,45 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 
 }
 
-.login-button{
+.register-button{
+  margin: auto;
+  left: 58%;
+    top: 70%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+
+}
+
+.signin-button{
   margin: auto;
   left: 59%;
+    top: 70%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+
+}
+
+.forgot-password-button{
+  margin: auto;
+  left: 55%;
+    top: 80%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+
+}
+
+.download-button{
+  margin: auto;
+  left: 54%;
     top: 80%;
     width: 300px;
     margin-top: -10px; /* height/2 */
@@ -1802,10 +1838,33 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 
 }
 
-.download-button{
+
+.new-user-signup {
   margin: auto;
-  left: 54%;
-    top: 80%;
+  left: 35%;
+    top: 85%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+.already-signup {
+  margin: auto;
+  left: 51%;
+    top: 85%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+.forget-password-link {
+  margin: auto;
+  left: 70%;
+    top: 85%;
     width: 300px;
     margin-top: -10px; /* height/2 */
     margin-left: -115px; /* width/2 */
@@ -1860,16 +1919,6 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 
 }
 
-.login-button{
-  margin: auto;
-  left: 95%;
-    top: 25%;
-    width: 300px;
-    margin-top: -10px; /* height/2 */
-    margin-left: -115px; /* width/2 */
-    position: absolute;
-
-}
 
 .reports-button{
   margin: auto;
@@ -1893,7 +1942,16 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 
 }
 
+.login-button{
+  margin: auto;
+  left: 92%;
+    top: 37%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
 
+}
 
 
 .card {
