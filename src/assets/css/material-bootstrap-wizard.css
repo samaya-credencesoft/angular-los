@@ -53,10 +53,10 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
 }
 
 a {
-  color: #9c27b0;
+  color: #fff;
 }
 a:hover, a:focus {
-  color: #89229b;
+  color: #fff;
   text-decoration: none;
 }
 a.text-info:hover, a.text-info:focus {
@@ -1802,6 +1802,29 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 
 }
 
+.download-button{
+  margin: auto;
+  left: 54%;
+    top: 80%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+.report-button{
+  margin: auto;
+  left: 55%;
+    top: 80%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+
 .right-side-button {
 
   margin: auto;
@@ -1830,6 +1853,17 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   margin: auto;
   left: 30%;
     top: 45%;
+    width: 300px;
+    margin-top: -10px; /* height/2 */
+    margin-left: -115px; /* width/2 */
+    position: absolute;
+
+}
+
+.login-button{
+  margin: auto;
+  left: 95%;
+    top: 25%;
     width: 300px;
     margin-top: -10px; /* height/2 */
     margin-left: -115px; /* width/2 */

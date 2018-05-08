@@ -6,7 +6,6 @@ export class User {
     name: string;
     mobileNumber: number;
     companyName: string;
-    designation:string;
 
     constructor() {
     }
@@ -16,8 +15,6 @@ export class User {
             user.id === null &&
             user.mobileNumber === null &&
             user.companyName === null &&
-            user.name === null &&
-            user.designation ===null
-
+            user.name === null
     }
 }

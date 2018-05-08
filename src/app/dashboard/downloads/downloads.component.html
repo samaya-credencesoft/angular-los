@@ -13,7 +13,7 @@
                       
                   </div>
   <div>
-    <mat-form-field>
+    <mat-form-field class="center0">
       <input matInput [matDatepicker]="fromDatePpicker" placeholder="From date">
       <mat-datepicker-toggle matSuffix [for]="fromDatePpicker"></mat-datepicker-toggle>
       <mat-datepicker #fromDatePpicker></mat-datepicker>
@@ -22,7 +22,7 @@
         
 </div>
 <div>
-  <mat-form-field>
+  <mat-form-field class="center1">
     <input matInput [matDatepicker]="toDatePpicker" placeholder="To date">
     <mat-datepicker-toggle matSuffix [for]="toDatePpicker"></mat-datepicker-toggle>
     <mat-datepicker #toDatePpicker></mat-datepicker>
@@ -31,7 +31,7 @@
       
 </div>
 <div>
-  <mat-form-field class="center0">
+  <mat-form-field class="center2">
     <mat-select placeholder="Status">
       <mat-option *ngFor="let status of statusList" [value]="statusList.value">
         {{ status.viewValue }}
@@ -40,7 +40,7 @@
   </mat-form-field>
       
 </div>
-<div class="right-side-button">
+<div class="download-button">
   <button [disabled]="!downloadForm.valid" class="btn btn-danger btn-round" data-toggle="modal" data-target="#downloadFormModal">
           Show Downloads
   </button>

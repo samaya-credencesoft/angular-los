@@ -25,8 +25,8 @@ export class SignupComponent implements OnInit {
       this.model = new User();
   }
 
-  onRegister(): void {
-      console.log(this.model);
+  onRegister(details): void {
+      console.log(details);
 
       this.messages = [];
       this.authService
