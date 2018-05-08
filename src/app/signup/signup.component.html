@@ -1,114 +1,75 @@
-<!--<form (ngSubmit)="onRegister()" #registerForm="ngForm">
-        <div>
-            <label for="firstname">First Name: </label>
-            <input id="firstname" type="text"
-                   [(ngModel)]="model.firstname" #firstname="ngModel" name="firstname"
-                   pInputText>
-        </div>
-        <div>
-            <label for="lastname">Last Name: </label>
-            <input id="lastname" type="text"
-                   [(ngModel)]="model.lastname" #lastname="ngModel" name="lastname"
-                   pInputText>
-        </div>
-      <div>
-          <label for="email">Email: </label>
-          <input id="email" type="email"
-                 [(ngModel)]="model.email" #firstname="ngModel" name="email"
-                 pInputText>
-      </div>
-      <div>
-          <label for="CompanyName">Company Name: </label>
-          <input id="companyName" type="text"
-                 [(ngModel)]="model.companyName" #companyName="ngModel" name="companyName"
-                 pInputText>
-      </div>
-      <div>
-          <label for="mobile">Mobile: </label>
-          <input id="mobile" type="mobile"
-                 [(ngModel)]="model.mobile" #firstname="ngModel" name="mobile"
-                 pInputText>
-      </div>
-      <button pButton type="submit" label="Register">Submit</button>
-    </form>
--->
-
-    <div class="image-container set-full-height" style="background-image: url('assets/img/wizard-profile.jpg')">
+<div class="image-container set-full-height" style="background-image: url('assets/img/wizard-profile.jpg')">
  
-        <!--  Made By CredenceSoft  -->
-        <a href="https://credencesoft.co.nz" class="made-with-mk">
-          <div class="brand">CS</div>
-          <div class="made-with">credencesoft
-            <strong>.co.nz</strong>
-          </div>
-        </a>
-        <!--   Big container   -->
-        <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2">
-              <!--      Wizard container        -->
-              <div class="wizard-container">
-                  <div class="card wizard-card" data-color="green" id="wizardProfile">
-                       <!-- <form action="" method=""> -->
-                        <form (ngSubmit)="onRegister()" #registerForm="ngForm"> 
-                   
-                        <div class="wizard-header">
-                            <h3 class="wizard-title">
-                                Sign Up
-                            </h3>
-                            <h5>Please sign up here.</h5>
-                        </div>
-                        <div>
-                            <mat-form-field class="center0">
-                                <input matInput id="firstName" type="text" [(ngModel)]="model.firstname" #firstName="ngModel" name="firstName" 
-                                placeholder="First Name" >
-                            </mat-form-field>
-                        </div>
-                       <div>
-                            <mat-form-field class="center1">
-                                <input matInput id="lastName" type="text" [(ngModel)]="model.lastname" #lastName="ngModel" name="lastName" 
-                                    placeholder="Last Name" >
-                            </mat-form-field>
-                        </div>
-                        <div>
-                            <mat-form-field class="center2">
-                                <input matInput id="email" type="email"[(ngModel)]="model.email" #email="ngModel" name="email" 
-                                    placeholder="Email" >
-                            </mat-form-field>
-                        </div>
-                        <div>
-                            <mat-form-field class="center3">
-                                <input matInput id="companyName" type="text" [(ngModel)]="model.companyName" #companyName="ngModel" name="companyName" 
-                                    placeholder="Company Name" >
-                            </mat-form-field>
-                        </div>
+    <!--  Made By CredenceSoft  -->
+    <a href="https://credencesoft.co.nz" class="made-with-mk">
+      <div class="brand">CS</div>
+      <div class="made-with">credencesoft
+        <strong>.co.nz</strong>
+      </div>
+    </a>
+    <!--   Big container   -->
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+          <!--      Wizard container        -->
+          <div class="wizard-container">
+              <div class="card wizard-card" data-color="green" id="wizardProfile">
+                <form (ngSubmit)="onRegister(registerForm.value)" #registerForm="ngForm">
+                    <div class="wizard-header">
+                        <h3 class="wizard-title">
+                            Sign Up
+                        </h3>
+                        <h5>Please sign up here.</h5>
+                    </div>
                     <div>
-                            <mat-form-field class="center4">
-                                    <mat-select placeholder="Designation" #designation="ngModel" [(ngModel)]="model.designation" name="designation" >
-                                      <mat-option *ngFor="let designation of designations"   [value]="designation.value">
-                                        {{ designation.viewValue }}
-                                      </mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-                                  
-                    </div> 
+                        <mat-form-field class="center0">
+                            <input matInput id="firstName" type="text" [(ngModel)]="model.firstname" #firstName="ngModel" name="firstName" 
+                            placeholder="First Name" >
+                        </mat-form-field>
+                    </div>
                     <div>
-                            <mat-form-field class="center5">
-                                    <input matInput id="mobile" type="number" [(ngModel)]="model.mobile" #mobile="ngModel" name="mobile"
-                                     placeholder="Mobile Number" >
-                                </mat-form-field>
-                    </div> -->
-                        <div class="right-side-button">
-                            <!--[disabled]="!registerForm.valid"-->
-                            <button  type="submit"  [disabled]="!registerForm.valid"  class="btn btn-danger btn-round" data-toggle="modal" data-target="#registrationModal">
-                                    Register
-                            </button>
-                        </div>
-                    </form>
-    </div>
-    </div>
-    </div>
-    </div>
-    
-    </div>
-    
+                        <mat-form-field class="center1">
+                            <input matInput id="lastName" type="text" [(ngModel)]="model.lastname" #lastName="ngModel" name="lastName" 
+                                placeholder="Last Name" >
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="center2">
+                            <input matInput id="email" type="email"[(ngModel)]="model.email" #email="ngModel" name="email" 
+                                placeholder="Email" >
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="center3">
+                            <input matInput id="companyName" type="text" [(ngModel)]="model.companyName" #companyName="ngModel" name="companyName" 
+                                placeholder="Company Name" >
+                        </mat-form-field>
+                    </div>
+                <div>
+                        <mat-form-field class="center4">
+                                <mat-select placeholder="Designation">
+                                  <mat-option *ngFor="let designation of designations" [(ngModel)]="model.designation" [value]="designation.value">
+                                    {{ designation.viewValue }}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                              
+                </div>
+                <div>
+                        <mat-form-field class="center5">
+                                <input matInput id="mobile" type="number" [(ngModel)]="model.mobile" #mobile="ngModel" name="mobile"
+                                 placeholder="Mobile Number" >
+                            </mat-form-field>
+                </div>
+                    <div class="right-side-button">
+                        <button [disabled]="!registerForm.valid" type="button" class="btn btn-danger btn-round" data-toggle="modal" data-target="#registrationModal">
+                                Register
+                        </button>
+                    </div>
+                </form>
+</div>
+</div>
+</div>
+</div>
+
+</div>

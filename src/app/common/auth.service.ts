@@ -6,7 +6,6 @@ import {Observable} from 'rxjs/Observable';
 
 import {User} from '../signup/user';
 import {API_URL} from '../app.component';
-import { Logger } from './logger.service';
 
 @Injectable()
 export class AuthService {
@@ -44,7 +43,6 @@ export class AuthService {
     }
 
     register(user: User): Observable<boolean> {
-        console.log(user);
         return this.http.post(API_URL + '/register', user)
             .map(response => response.json() as User)
             .map(currentUser => !User.isNull(currentUser))
