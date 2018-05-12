@@ -30,27 +30,50 @@ import {
 @Injectable()
 
 export class ForgotPasswordComponent implements OnInit {
-
+ 
   constructor(private route: ActivatedRoute,private router: Router,private logger:Logger,
     private http:Http) { }
     public PASSWORD_RESET_API = API_URL+ '/ForgotPassword';
 
   selectedId : any;
-
-
+  password : any;
+  confirmPassword : any;
+  passwordBlankMessage : any = false;
+  passwordNotMatchedError : any = false;
+  passwordMatchedSuccess : any = false;
   ngOnInit() {
     this.selectedId = this.route.snapshot.queryParamMap.get("id");
   }
 
+  
+  pwd(passwordValue)
+  {
+    this.password = passwordValue;
+    //console.log(this.password);
+    this.passwordMatched();
+  }
+  
+  confPwd(confirmPasswordValue)
+  {
+    this.confirmPassword = confirmPasswordValue;
+    //console.log(this.confirmPassword);
+    this.passwordMatched();
+  }
+  
+
+  
+  
   //Password Reset function
   forgotPassword(password){
-    console.log(password);
+   
     return this.http.post(this.PASSWORD_RESET_API, password).subscribe
     ( 
       data => {
           this.logger.log(data.json)
       alert("Successfully Login.");
     });
+  
+    
     //password and confirm password matches 
     // if(value.password == value.confirmPassword){
     //   console.log("matched");
@@ -71,4 +94,28 @@ export class ForgotPasswordComponent implements OnInit {
     
   }
 
+  
+  passwordMatched()
+  {
+    if(this.password === '' || this.confirmPassword === '')
+    {
+      this.passwordNotMatchedError = false;
+      this.passwordMatchedSuccess = false;
+    }
+    else
+    {
+        if(this.password !== this.confirmPassword)
+        {
+          this.passwordNotMatchedError = true;
+          this.passwordMatchedSuccess = false;
+        }
+        else
+        {
+          this.passwordMatchedSuccess = true;
+          this.passwordNotMatchedError = false;
+        }
+    }
+    
+  }
+  
 }

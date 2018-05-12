@@ -35,14 +35,33 @@ export class ResetPasswordComponent implements OnInit {
     public PASSWORD_RESET_API = API_URL+ '/PasswordReset';
 
   selectedId : any;
+  password : any;
+  confirmPassword : any;
+  passwordBlankMessage : any = false;
+  passwordNotMatchedError : any = false;
+  passwordMatchedSuccess : any = false;
 
   ngOnInit() {
     this.selectedId = this.route.snapshot.queryParamMap.get("id");
   }
 
+  pwd(passwordValue)
+  {
+    this.password = passwordValue;
+    //console.log(this.password);
+    this.passwordMatched();
+  }
+  
+  confPwd(confirmPasswordValue)
+  {
+    this.confirmPassword = confirmPasswordValue;
+    //console.log(this.confirmPassword);
+    this.passwordMatched();
+  }
+  
   //Password Reset function
   resetPassword(form_val){
-    console.log(form_val);
+    //console.log(form_val);
     if(form_val.password == form_val.confirmPassword)
     {
       var credentials = {"password":form_val.password, "uid":this.selectedId};
@@ -56,6 +75,30 @@ export class ResetPasswordComponent implements OnInit {
       console.log("Password dosent Match");
     }
   
+  }
+
+  
+  passwordMatched()
+  {
+    if(this.password === '' || this.confirmPassword === '')
+    {
+      this.passwordNotMatchedError = false;
+      this.passwordMatchedSuccess = false;
+    }
+    else
+    {
+        if(this.password !== this.confirmPassword)
+        {
+          this.passwordNotMatchedError = true;
+          this.passwordMatchedSuccess = false;
+        }
+        else
+        {
+          this.passwordMatchedSuccess = true;
+          this.passwordNotMatchedError = false;
+        }
+    }
+    
   }
 }
 

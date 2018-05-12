@@ -31,6 +31,7 @@ import { DataComponent } from './dashboard/data/data.component';
 import { DownloadsComponent } from './dashboard/downloads/downloads.component';
 import { ReportsComponent } from './dashboard/reports/reports.component';
 import { LogoutComponent } from './dashboard/logout/logout.component'
+import {confirmEqualPasswordValidator } from './common/confirm-equal-passwords-validator.directive';
 @NgModule({
   imports: [
     BrowserModule,
@@ -63,7 +64,8 @@ import { LogoutComponent } from './dashboard/logout/logout.component'
      DataComponent,
      DownloadsComponent,
      ReportsComponent,
-     LogoutComponent
+     LogoutComponent,
+     confirmEqualPasswordValidator
     ],
   bootstrap: [AppComponent],
   providers:[
