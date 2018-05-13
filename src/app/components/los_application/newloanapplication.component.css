@@ -1,0 +1,57 @@
+
+.address-full-width {
+  width: 90.5%;
+}
+
+.date-full-width {
+  width: 45%;
+}
+
+.input-full-width {
+  width: 45%;
+}
+
+.input-full-width2 {
+  width: 29.9%;
+}
+
+
+.email-full-width {
+  width: 45%;
+}
+
+.form-full-width {
+  width: 100%;
+}
+
+.example-left-align {
+  text-align: left;
+}
+
+input.example-left-align::-webkit-outer-spin-button,
+input.example-left-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-left-align {
+  -moz-appearance: textfield;
+}
+
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid ;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.center1 {
+  margin: auto;
+  width: 114%;
+  border: 3px  ;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+}

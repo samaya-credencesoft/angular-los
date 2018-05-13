@@ -1,25 +1,22 @@
 import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
-import {LoginComponent} from './login/login.component';
-import {HomeComponent} from './home/home.component';
-import {AuthGuard} from './common/auth-guard.service';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {LoanApplicationNew} from './application/newloanapplication.component'
-import {SignupComponent} from './signup/signup.component'
-import {ResetPasswordComponent} from './reset-password/reset-password.component';
-import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
-import { DataComponent } from './dashboard/data/data.component';
-import { DownloadsComponent } from './dashboard/downloads/downloads.component';
-import { ReportsComponent } from './dashboard/reports/reports.component';
-import { LogoutComponent } from './dashboard/logout/logout.component'
-
+import {LoginComponent} from './components/authentication_components/login/login.component';
+//import {HomeComponent} from './home/home.component';
+import {AuthGuard} from './services/common_services/auth-guard.service';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {LoanApplicationNew} from './components/los_application/newloanapplication.component'
+import {SignupComponent} from './components/authentication_components/signup/signup.component'
+import {ResetPasswordComponent} from './components/authentication_components/reset-password/reset-password.component';
+import {ForgotPasswordComponent} from './components/authentication_components/forgot-password/forgot-password.component';
+import { LogoutComponent } from './components/authentication_components/logout/logout.component';
+import {BaseComponent} from './components/base_component/base.component';
 
 const appRoutes: Routes = [
-    {
-        path: 'home',
-        component: HomeComponent,
-        canActivate: [AuthGuard]
-    },
+    // {
+    //     path: 'home',
+    //     component: HomeComponent,
+    //     canActivate: [AuthGuard]
+    // },
     {
         path: '',
         component: LoanApplicationNew
@@ -27,6 +24,10 @@ const appRoutes: Routes = [
     {
         path: 'signin',
         component: LoginComponent
+    },
+    {
+        path: 'baseComponent',
+        component: BaseComponent
     },
     {
         path: 'signup',
@@ -47,21 +48,6 @@ const appRoutes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard]
-       
-    },
-    {
-        path: 'data',
-        component: DataComponent
-       
-    },
-    {
-        path: 'downloads',
-        component: DownloadsComponent
-       
-    },
-    {
-        path: 'reports',
-        component: ReportsComponent
        
     },
     {

@@ -1,0 +1,372 @@
+<div class="image-container set-full-height" style="background-image: url('assets/img/wizard-book.jpg')">
+  <!--   Creative Tim Branding   -->
+  <a href="http://creative-tim.com">
+       <div class="logo-container">
+          <div class="logo">
+              <img src="assets/img/new_logo.png">
+          </div>
+          <div class="brand">
+              Credencesoft
+          </div>
+      </div>
+  </a>
+
+<!--  Made With Material Kit  -->
+<a href="http://demos.creative-tim.com/material-kit/index.html?ref=material-bootstrap-wizard" class="made-with-mk">
+  <div class="brand">MK</div>
+  <div class="made-with">Made with <strong>Credencesoft</strong></div>
+</a>
+
+  <!--   Big container   -->
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <!--      Wizard container        -->
+            <div class="wizard-container">
+                <div class="card wizard-card" data-color="red" id="wizard">
+                    <form action="" method="">
+                <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+
+                      <div class="wizard-header">
+                          <h3 class="wizard-title">
+                                Loan Origination System
+                          </h3>
+                      </div>
+            <div class="wizard-navigation">
+              <ul>
+                              <li><a href="#loanDetails" data-toggle="tab">LOAN DETAILS</a></li>
+                              <li><a href="#personalDetails" data-toggle="tab">PERSONAL DETAILS</a></li>
+                          </ul>
+            </div>
+
+                        <div class="tab-content">
+
+                            <!-- ........................... loan details form starts ..................... -->
+
+                            <div class="tab-pane" id="loanDetails">
+                              <div class="row">
+                                <div class="col-sm-12">
+                                    <h4 class="info-text"> Let's start with the basic details.</h4>
+                                </div>
+
+
+
+
+
+<!-- title and email starts -->
+<div class="col-sm-6">
+<div class="input-group">
+<span class="input-group-addon">
+<!-- <i class="material-icons">title</i> -->
+</span>
+<div class="form-group label-floating">
+<label class="control-label">Title</label>
+<select [(ngModel)]="model.title" name="title" class="form-control">
+<option *ngFor="let title of titles" [value]="title.viewValue">
+{{ title.viewValue }}
+</option>
+</select>
+</div>
+</div>
+<div class="input-group">
+<span class="input-group-addon">
+<!-- <i class="material-icons">lock_outline</i> -->
+</span>
+<div class="form-group label-floating">
+<label class="control-label">Email ID</label>
+<input type="email" class="form-control"
+name="email" 
+[(ngModel)]="model.email" /> 
+</div>
+</div>  
+</div>
+<!-- title and email ends -->
+
+<!-- name and mobile number starts starts -->
+<div class="col-sm-6">
+
+
+<div class="form-group label-floating">
+<label class="control-label">Name</label>
+<input type="text" class="form-control"
+[(ngModel)]="model.name" name="name" #name="ngModel"/>
+</div>
+                
+<div class="form-group label-floating">
+<label class="control-label">Mobile Number</label>
+<input type="number" #input maxlength="10" class="form-control"
+pattern="[0-9]{10}" [(ngModel)]="model.mobileNumber" 
+#mobileNumber="ngModel"  name="mobileNumber"/>
+</div>
+
+</div>
+<!-- name and mobile number ends -->
+
+
+<!-- customer category and annual income starts -->
+<div class="col-sm-6">
+
+<div class="input-group">
+<span class="input-group-addon">
+<!-- <i class="material-icons">lock_outline</i> -->
+</span>
+<div class="form-group label-floating">
+<label class="control-label">Customer Category</label>
+<select [(ngModel)]="model.customerCategory" name="customerCategory" class="form-control">
+<option *ngFor="let customer of customers" [value]="customer.viewValue">
+{{ customer.viewValue }}
+</option>
+</select>
+</div>
+</div>
+
+<div class="input-group">
+<span class="input-group-addon">
+<!-- <i class="material-icons">title</i> -->
+</span>
+<div class="form-group label-floating">
+<label class="control-label">Annual Income</label>
+<input type="number" #input maxlength="8" 
+pattern="[0-9]{8}" class="form-control" 
+[(ngModel)]="model.annualIncome" name="annualIncome"/>
+</div>
+</div>
+        
+</div>
+<!-- customer category and annual income ends -->
+
+
+<!-- Profession and Loan Type starts -->
+<div class="col-sm-6">
+
+<div class="form-group label-floating">
+<label class="control-label">Profession</label>
+<select [(ngModel)]="model.profession" class="form-control" name="profession">
+<option *ngFor="let employee of employees" [value]="employee.viewValue">
+{{ employee.viewValue }}
+</option>
+</select>
+</div>
+
+<div class="form-group label-floating">
+<label class="control-label">Loan Type</label>
+<select [(ngModel)]="model.loanType"class="form-control"  name="loanType">
+<option *ngFor="let ltype of ltypes" [value]="ltype.viewValue">
+{{ ltype.viewValue }}
+</option>
+</select>        
+</div>
+
+</div>
+<!-- Profession and Loan Type ends -->
+
+
+
+<!-- Loan Amount starts -->
+<div class="col-sm-6">
+
+<div class="input-group">
+<span class="input-group-addon">
+<!-- <i class="material-icons">title</i> -->
+</span>
+<div class="form-group label-floating">
+<label class="control-label">Loan Amount</label>
+<input type="number" maxlength="8" pattern="[0-9]{8}" class="form-control" 
+[(ngModel)]="model.loanAmount" name="loanAmount">
+</div>
+</div>
+
+</div>
+<!-- Loan Amount ends -->
+
+<!-- Loan Tenure starts -->            
+<div class="col-sm-6">
+<div class="form-group label-floating">
+<label class="control-label">Loan Tenure</label>
+<input type="number" maxlength="3" pattern="^(1[0-9][0-9]|2[0-4][0-9]|3[0-5][0-9]|360)$"
+class="form-control" [(ngModel)]="model.loanTenure" name="loanTenure">
+</div>
+
+</div>
+<!-- Loan Tenure ends -->
+</div>
+</div>
+<!-- ........................... loan details form ends ..................... -->
+
+
+
+
+
+
+
+<!-- ........................... personal details form starts ..................... -->
+
+
+                            <div class="tab-pane" id="personalDetails">
+                                <h4 class="info-text">Let's have some personal details ! </h4>
+                                <div class="row">
+                                   <!-- title and email starts -->
+<div class="col-sm-6">
+
+        <div class="input-group">
+        <span class="input-group-addon">
+        <!-- <i class="material-icons">title</i> -->
+        </span>
+        <div class="form-group label-floating">
+        <label class="control-label">Aadhar</label>
+        <input type="number" class="form-control" maxlength="12"  
+        [(ngModel)]="model.aadharNumber" name="aadharNumber" />
+        </div>
+        </div>
+
+        <div class="input-group">
+        <span class="input-group-addon">
+        <!-- <i class="material-icons">lock_outline</i> -->
+        </span>
+        <div class="form-group label-floating">
+        <label class="control-label">Gender</label>
+        <select class="form-control" [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+            <option *ngFor="let gender of genders" [value]="gender.viewValue">
+                    {{ gender.viewValue }}
+            </option>
+        </select>
+        </div>
+        </div>
+
+        </div>
+        <!-- title and email ends -->
+        
+        <!-- name and mobile number starts starts -->
+        <div class="col-sm-6">
+        
+        
+        <div class="form-group label-floating">
+        <label class="control-label">Pan</label>
+        <input type="text" class="form-control"
+        maxlength="10" [(ngModel)]="model.pan" name="pan"/>
+        </div>
+                        
+        <div class="form-group label-floating">
+        <label class="control-label"></label>
+        <input type="date" class="form-control" [(ngModel)]="model.dob" name="dob">
+        </div>
+        
+        </div>
+        <!-- name and mobile number ends -->
+        
+        
+        <!-- customer category and annual income starts -->
+        <div class="col-sm-6">
+        
+        <div class="input-group">
+        <span class="input-group-addon">
+        <!-- <i class="material-icons">lock_outline</i> -->
+        </span>
+        <div class="form-group label-floating">
+        <label class="control-label">Pincode</label>
+        <input type="number" maxlength="6"  (change)="getAddressDetailsByPostCode(model.pinCode)" 
+        [(ngModel)]="model.pinCode" name="pinCode" class="form-control">
+        </div>
+        </div>
+        
+        <div class="input-group">
+        <span class="input-group-addon">
+        <!-- <i class="material-icons">title</i> -->
+        </span>
+        <div class="form-group label-floating">
+        <label class="control-label">Address</label>
+        <input type="text" maxlength="100" placeholder="Address" [(ngModel)]="model.address" name="address"
+         class="form-control"/>
+        </div>
+        </div>
+                
+        </div>
+        <!-- customer category and annual income ends -->
+        
+        
+        <!-- Profession and Loan Type starts -->
+        <div class="col-sm-6">
+        
+        <div class="form-group label-floating">
+        <label class="control-label">Area/Landmark</label>
+        <input type="text" maxlength="50" class="form-control"
+        [(ngModel)]="model.landmark" name="landmark"/></div>
+        
+        <div class="form-group label-floating">
+        <label class="control-label">District</label>
+        <input type="text" class="form-control" [(ngModel)]="model.addressCity" required name="addressCity"/>
+        </div>
+        
+        </div>
+        <!-- Profession and Loan Type ends -->
+        
+        
+        
+        <!-- Loan Amount starts -->
+        <div class="col-sm-6">
+        
+        <div class="input-group">
+        <span class="input-group-addon">
+        <!-- <i class="material-icons">title</i> -->
+        </span>
+        <div class="form-group label-floating">
+        <label class="control-label"></label>
+        <input type="text" class="form-control" [(ngModel)]="model.addressState" required name="addressState">
+        </div>
+        </div>
+        
+        </div>
+        <!-- Loan Amount ends -->
+        
+        <!-- Loan Tenure starts -->            
+        <div class="col-sm-6">
+        <div class="form-group label-floating">
+        <label class="control-label"></label>
+        <input type="text" [(ngModel)]="model.addressCountry" required name="addressCountry"
+        class="form-control">
+        </div>
+        
+        </div>
+        <!-- Loan Tenure ends -->
+                                </div>
+                            </div>
+
+
+
+                            <!-- ........................... loan details form ends ..................... -->
+
+                        </div>
+                        <div class="wizard-footer">
+                            <div class="pull-right">
+                                  <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next' value='Next' (click)="saveLoanApplication();"/>
+                                  <input type='button' class='btn btn-finish btn-fill btn-danger btn-wd' name='submit' value='Submit' (click)="onSubmit();"/>
+                              </div>
+                              <div class="pull-left">
+                                  <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+
+                <!-- <div class="footer-checkbox">
+                  <div class="col-sm-12">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="optionsCheckboxes">
+                      </label>
+                      Subscribe to our newsletter
+                    </div>
+                  </div>
+                </div> -->
+                              </div>
+                              <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div> <!-- wizard container -->
+        </div>
+    </div> <!-- row -->
+</div> <!--  big container -->
+</div>
+<div class="footer">
+        <div class="container text-center">
+             Made with <i class="fa fa-heart heart"></i> by <a href="https://credencesoft.co.nz">CredenceSoft</a>. <br> <a href="https://credencesoft.co.nz">Copyright © 2018 CredenceSoft -  All Rights Reserved.</a>
+        </div>
+    </div>
+    
