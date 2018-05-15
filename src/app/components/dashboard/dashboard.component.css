@@ -1,0 +1,164 @@
+.navbar{
+    border-radius:0px;
+    background: #0052CC;
+    border:none !important;
+    margin-bottom: 0px;
+}
+
+.navbar-brand{
+    color:#fff;
+    font-weight:bold;
+}
+
+.navbar-right li a{
+    color:#fff;
+}
+
+.navbar-right li a .fa{
+    font-size:15px;
+}
+
+.sidebar-dashboard{
+    position: absolute;
+    width:250px;
+    height: calc(100% - 70px);
+    left:0;
+    top:70px;
+    background: #222;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+.dashboard-content{
+    height: auto;
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.panel{
+    margin-bottom: 0px;
+    border-radius:0px;
+    border: none;
+    border-bottom:1px solid #ccc;
+    background: transparent;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.panel-title{
+    font-size:13px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.panel-title a .fa{
+    float: right;
+}
+
+.panel a{
+    color:#fff;
+    text-decoration: none;
+}
+
+.panel-default>.panel-heading{
+    background:none;
+    cursor: pointer;
+}
+
+.panel-group .panel+.panel{
+    margin-top: 0px;
+}
+
+.panel-body{
+    padding: 0px;
+}
+
+.list-group-item{
+    background-color: #3a3a3a;
+    border: none;
+    border-bottom:1px solid #ccc !important;
+    color:#ddd;
+    margin-bottom: 0px;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.list-group-item:last-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+
+.widget{
+    color: white;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    display: block;
+    padding: 10px;
+    margin-top: 30px;
+    margin-right: 20px;
+    width: 23%;
+}
+
+#widget_first{
+    background-color: #2b0645;
+    
+}
+
+#widget_second{
+    background-color: #747474;
+}
+
+#widget_third{
+    background-color: #6227ae;
+}
+
+#widget_fourth{
+    background-color: #ea125e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

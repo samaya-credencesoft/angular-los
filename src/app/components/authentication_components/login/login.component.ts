@@ -19,7 +19,8 @@ import {
   };
 
   import {API_URL} from '../../../app.component';
-  
+  //import '../../../../assets/js/material-bootstrap-wizard.js';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

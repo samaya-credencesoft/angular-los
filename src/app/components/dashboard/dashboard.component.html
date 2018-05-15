@@ -1,1 +1,107 @@
-<h1>dashboard works</h1>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#" data-toggle="tooltip" title="LOS">Loan Originating System</a>
+        </div>
+       
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" data-toggle="tooltip" title="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" data-toggle="tooltip" title="settings"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<aside class="sidebar-dashboard">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <h4 class="panel-title">
+                    <a data-toggle="tooltip" title="master-creation">Master Creation<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <li class="list-group-item">First item</li>
+                <li class="list-group-item">Second item</li>
+                <li class="list-group-item">Third item</li>
+            </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                <h4 class="panel-title">
+                    <a data-toggle="tooltip" title="dashboard">Dashboard<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <li class="list-group-item">First item</li>
+                <li class="list-group-item">Second item</li>
+                <li class="list-group-item">Third item</li>
+            </div>
+            </div>
+        </div>
+    </div> 
+</aside>
+
+<div class="dashboard-content">
+    <div class="container-fluid">
+        <!-- Widgets-->
+        <div class="row">
+            <div id="widget_first" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 widget grid-margin stretch-card">
+                <div class="card">
+                <div class="card-body">
+                    <div class="clearfix">
+                    <i class="fa fa-users float-right icon-md text-gray"></i>
+                    </div>
+                    <h6 class="card-subtitle mb-4">Data</h6>
+                    <div class="progress progress-slim">
+                    <div class="progress-bar bg-success-gadient" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div id="widget_second" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 widget grid-margin stretch-card">
+                <div class="card">
+                <div class="card-body">
+                    <div class="clearfix">
+                    <i class="fa fa-shopping-cart float-right icon-md text-gray"></i>
+                    </div>
+                    <h6 class="card-subtitle mb-4">Downloads</h6>
+                    <div class="progress progress-slim">
+                    <div class="progress-bar bg-info-gadient" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div id="widget_third" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 widget grid-margin stretch-card">
+                <div class="card">
+                <div class="card-body">
+                    <div class="clearfix">
+                    <i class="fa fa-bookmark float-right icon-md text-gray"></i>
+                    </div>
+                    <h6 class="card-subtitle mb-4">Reports</h6>
+                    <div class="progress progress-slim">
+                    <div class="progress-bar bg-warning-gadient" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div id="widget_fourth" class="col-xl-3 col-lg-3 col-md-3 col-sm-6 widget grid-margin stretch-card">
+                <div class="card">
+                <div class="card-body">
+                    <div class="clearfix">
+                    <i class="fa fa-pie-chart float-right icon-md text-gray"></i>
+                    </div>
+                    <h6 class="card-subtitle mb-4">Pendings</h6>
+                    <div class="progress progress-slim">
+                    <div class="progress-bar bg-danger-gadient" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import {Message} from 'primeng/components/common/api';
 
 import {AuthService} from '../../../services/common_services/auth.service';
 import {User} from '../signup/user';
+//import '../../../../assets/js/material-bootstrap-wizard.js';
 
 @Component({
   selector: 'app-signup',
