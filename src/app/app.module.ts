@@ -30,6 +30,8 @@ import { ForgotPasswordComponent } from './components/authentication_components/
 import { LogoutComponent } from './components/authentication_components/logout/logout.component'
 import {confirmEqualPasswordValidator } from './services/common_services/confirm-equal-passwords-validator.directive';
 import {BaseComponent} from './components/base_component/base.component';
+import { DataTablesModule } from 'angular-datatables';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import {BaseComponent} from './components/base_component/base.component';
     MatMomentDateModule,
     MatButtonModule,
     HttpModule,
-    routing
+    routing,
+    DataTablesModule
     ],
   declarations: [
      LoanApplicationNew,
