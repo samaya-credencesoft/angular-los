@@ -10,6 +10,8 @@ declare var $ :any;
 export class DashboardComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
+  public show:boolean = true;
+  public buttonName:any = 'Show';
   user_data = [];
   constructor() { }
   
@@ -19,8 +21,6 @@ export class DashboardComponent implements OnInit {
         "id": 860,
         "firstName": "Superman",
         "lastName": "Yoda"
-        
-    
       },
       {
         "id": 860,
@@ -78,5 +78,12 @@ export class DashboardComponent implements OnInit {
   }
 }
 
+toggle() {
+    this.show = !this.show;
 
+    if(this.show)  
+      this.buttonName = "Hide";
+    else
+      this.buttonName = "Show";
+  }
 }

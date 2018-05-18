@@ -36,7 +36,10 @@ body{
     color: #000;
     border-right: 1px solid #ccc;
     box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    transition: 0.5s;
 }
+
+
 
 .dashboard-content{
     height: auto;
@@ -205,6 +208,17 @@ body{
 .card_bar_two {width: 40%; background-color: #2196F3;;}
 .card_bar_three {width: 65%; background-color:#2196F3;;}
 .card_bar_four {width: 60%; background-color: #2196F3;;}
+
+@media only screen and (max-width: 1024px) {
+    .sidebar-dashboard{   
+        width:50px;  
+    }
+
+    .sidebar-dashboard a{
+        display: none;
+    }
+    
+}
 
 
 
