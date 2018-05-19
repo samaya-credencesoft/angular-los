@@ -39,8 +39,9 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(loginDetails){
+    console.log(loginDetails);
     // Api call to validate user .
-    this.service.validate_user(loginDetails,this.LOGIN_APPLICATION_API)    
+    this.service.validate_user(loginDetails,this.LOGIN_APPLICATION_API);    
   }
 
 }

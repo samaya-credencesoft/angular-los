@@ -25,10 +25,10 @@ export class AuthService {
     }
 
     validate_user(user: User, login_url:string) {
-        //  this.http.post(login_url, User).map(res => res.json()).subscribe((response)=>{
-        //     console.log(response);
-        //     this.router.navigate(['dashboard'])
-        //   });
+         this.http.post(login_url, User).map(res => res.json()).subscribe((response)=>{
+            console.log(response);
+            this.router.navigate(['dashboard'])
+          });
 
         var email:string = "admin@gmail.com";
         var password:string = "password";

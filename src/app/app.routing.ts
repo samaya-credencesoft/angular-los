@@ -34,7 +34,7 @@ const appRoutes: Routes = [
         component: SignupComponent
     },
     {
-        path: 'resetPassword',
+        path: 'resetPassword/:*',
         component: ResetPasswordComponent
     },
     {
