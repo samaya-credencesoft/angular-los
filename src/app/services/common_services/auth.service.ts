@@ -25,14 +25,12 @@ export class AuthService {
     }
 
     validate_user(user: User, login_url:string) {
-        // if(user.email || user.password === ''){
-        //     console.log("fields are mandatory");
-        // }else{
+        console.log(user,"aaaa")
             this.http.post(login_url, user).map(res => res.json()).subscribe((response)=>{
                 console.log(response);
-                
                 if(response.login_status === "success"){
                     this.isLoggedIn = true;
+                    localStorage.setItem('isLoggedIn', "true");
                     console.log("login success");
                     this.router.navigate(['dashboard']);
                 }else if(response.login_status === "failed"){
@@ -44,21 +42,7 @@ export class AuthService {
                 }
                 
               });
-        // }
-         
-
-        // var email:string = "admin@gmail.com";
-        // var password:string = "password";
-        // // Api call to validate user 
     
-        // if(user.email == email && user.password == password)
-        // {
-        //   this.isLoggedIn = true;
-        //   this.router.navigate(['dashboard'])
-        // }else{
-        //     this.isLoggedIn = false;
-        //     console.log("Invalid Credentials");
-        // }
     }
 
 
