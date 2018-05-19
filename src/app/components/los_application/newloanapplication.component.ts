@@ -1,4 +1,4 @@
-import {Component,OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators,FormGroupDirective,NgForm,FormControl} from '@angular/forms';
 import {
 Http,Response,
@@ -26,10 +26,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 @Component({
   selector: 'app-newloanapplication',
   templateUrl: './newloanapplication.component.html',
+ //templateUrl: './test.html',
   styleUrls: ['./newloanapplication.component.css'],
-  providers:  [AddressService, CustomerOnboardingService, Logger]
+  providers:  [AddressService,CustomerOnboardingService,Logger]
 })
-export class LoanApplicationNew implements OnInit {
+export class LoanApplicationNew {
   
   title = 'app';
   isLinear = false;
