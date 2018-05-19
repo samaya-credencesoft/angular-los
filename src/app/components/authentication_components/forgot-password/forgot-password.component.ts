@@ -46,7 +46,8 @@ ngOnInit() {
  
 
   //forgot password function
-  forgotPassword(email_val){
+  forgotPassword(email_val)
+  {
     console.log(email_val);
       this.http.post(this.FORGOT_PASSWORD_API, email_val).map(res => res.json()).subscribe((response)=>{
         console.log(response);
@@ -61,7 +62,5 @@ ngOnInit() {
         }
       });
 
-  }
-
-  
+  }  
 }
