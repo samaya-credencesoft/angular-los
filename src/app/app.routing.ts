@@ -34,7 +34,7 @@ const appRoutes: Routes = [
         component: SignupComponent
     },
     {
-        path: 'resetPassword',
+        path:  'resetPassword/:*',
         component: ResetPasswordComponent
     },
     {
@@ -44,7 +44,7 @@ const appRoutes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent,
-        //canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
     },
     {
         path: 'logout',

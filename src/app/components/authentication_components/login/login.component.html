@@ -30,13 +30,19 @@
                     </div>
                         <div>
                           <mat-form-field class="center1">
-                            <input matInput placeholder="Email" name="email" ngModel #email="ngModel">
+                            <input matInput placeholder="Email" required name="email" ngModel #email="ngModel">
                           </mat-form-field>
+                          <span *ngIf="email.touched && email.errors?.required">
+                              email is required
+                          </span>
                         </div>
                           <div>
                             <mat-form-field class="center2">
-                              <input matInput placeholder="Password" name="password" ngModel #password="ngModel">
+                              <input matInput placeholder="Password" required name="password" ngModel #password="ngModel">
                             </mat-form-field>
+                            <span *ngIf="password.touched && password.errors?.required">
+                                password is required
+                            </span>
                         </div>
                         <div class="signin-button">
                           <button class="btn btn-danger btn-round">

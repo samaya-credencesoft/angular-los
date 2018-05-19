@@ -30,7 +30,7 @@ import {
 @Injectable()
 export class LoginComponent implements OnInit {
 
-  public LOGIN_APPLICATION_API = API_URL+ '/LoginApplication';
+  public LOGIN_APPLICATION_API = API_URL+ '/loginUser';
   isLoggedIn :boolean = false ;
 
   constructor(private logger:Logger, private service: AuthService,private router:Router) { }
@@ -39,8 +39,9 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(loginDetails){
+    console.log(typeof(loginDetails));
     // Api call to validate user .
-    this.service.validate_user(loginDetails,this.LOGIN_APPLICATION_API)    
+    this.service.validate_user(loginDetails,this.LOGIN_APPLICATION_API);    
   }
 
 }

@@ -1,3 +1,4 @@
+import { DashboardService } from './services/dashboard_services/dashboard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppMaterialModules } from './material.module';
@@ -69,6 +70,7 @@ import { DataTablesModule } from 'angular-datatables';
     Logger,
     AddressService,
     CustomerOnboardingService,
+    DashboardService,
     AuthService,
     AuthGuard
   ]
