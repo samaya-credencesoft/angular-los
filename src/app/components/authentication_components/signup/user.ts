@@ -1,3 +1,5 @@
+import { $$ } from "protractor";
+
 export class User {
 
     id: string;
@@ -6,6 +8,7 @@ export class User {
     name: string;
     mobileNumber: number;
     companyName: string;
+    uuid: string;
 
     constructor() {
     }
@@ -15,6 +18,8 @@ export class User {
             user.id === null &&
             user.mobileNumber === null &&
             user.companyName === null &&
-            user.name === null
+            user.name === null &&
+            user.uuid == null 
+            
     }
 }

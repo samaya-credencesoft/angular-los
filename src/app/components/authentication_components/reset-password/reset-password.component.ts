@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {NgModule} from '@angular/core';
-import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap, Params } from '@angular/router';
 import { Logger } from '../../../services/common_services/logger.service';
 import {
     Http,
@@ -31,9 +31,11 @@ import {
 export class ResetPasswordComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private router: Router,private logger:Logger,
-    private http:Http) { }
-    public PASSWORD_RESET_API = API_URL+ '/PasswordReset';
+  private http:Http) { }
+  public PASSWORD_RESET_API = API_URL+ '/resetPassword';
+  public UID_EXIST_API = API_URL + '/isUuidValid';
 
+  uidExist : boolean ;
   selectedId : any;
   password : any;
   confirmPassword : any;
@@ -42,7 +44,7 @@ export class ResetPasswordComponent implements OnInit {
   passwordMatchedSuccess : any = false;
 
   ngOnInit() {
-    this.selectedId = this.route.snapshot.queryParamMap.get("id");
+    this.selectedId = this.router.url.split('/')[2];
   }
 
   pwd(passwordValue)
@@ -60,18 +62,33 @@ export class ResetPasswordComponent implements OnInit {
   }
   
   //Password Reset function
-  resetPassword(form_val){
-    //console.log(form_val);
+  resetPassword(form_val)
+  {
     if(form_val.password == form_val.confirmPassword)
     {
-      var credentials = {"password":form_val.password, "uid":this.selectedId};
-      return this.http.post(this.PASSWORD_RESET_API,credentials ).subscribe
-      ( 
-        data => {
-            this.logger.log(data.json);
-            this.router.navigate(['/signin']);
+      var credentials = {"password":form_val.password, "uuid":this.selectedId};
+      
+      //check here if the UID exist or not through a API call
+      this.http.get(this.UID_EXIST_API+"/"+this.selectedId).map(res => res.json()).subscribe((response)=>{
+       console.log(response);
+        this.uidExist = response;
+        if(this.uidExist === true)
+        {
+          return this.http.post(this.PASSWORD_RESET_API,credentials ).subscribe
+          ( 
+            data => {
+                console.log(data.json);
+                this.router.navigate(['/signin']);
+          });
+        }
+        else
+        {
+          console.log("uid doesn't exist");
+        }
       });
-    }else{
+    }
+    else
+    {
       console.log("Password dosent Match");
     }
   
@@ -101,6 +118,3 @@ export class ResetPasswordComponent implements OnInit {
     
   }
 }
-
-
-

@@ -1,9 +1,9 @@
-// import '../../../../assets/js/material-bootstrap-wizard.js';
 import { Component, OnInit } from '@angular/core';
 import {Message} from 'primeng/components/common/api';
 
 import {AuthService} from '../../../services/common_services/auth.service';
 import {User} from '../signup/user';
+//import '../../../../assets/js/material-bootstrap-wizard.js';
 
 @Component({
   selector: 'app-signup',
@@ -27,7 +27,10 @@ export class SignupComponent implements OnInit {
   }
 
   onRegister(details): void {
-      console.log(details);
+      
+      this.model.uuid = "";
+      this.model.password = "";
+      console.log(this.model);
       this.messages = [];
       this.authService
           .register(this.model)

@@ -1,4 +1,5 @@
 @import url('../../../assets/css/material-bootstrap-wizard.css');
+@import url('../../../assets/css/demo.css');
 .image-container{
   background: #0052CC !important;
   display: table;
@@ -31,7 +32,7 @@ input{
 }
 
 
-@import url('../../../assets/css/demo.css');
+
 
 
 
