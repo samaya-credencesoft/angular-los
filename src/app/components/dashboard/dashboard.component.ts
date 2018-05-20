@@ -1,5 +1,6 @@
 import { DashboardService } from './../../services/dashboard_services/dashboard.service';
 import { Component, OnInit,AfterViewInit,Renderer, ViewChild } from '@angular/core';
+
 import {Router} from '@angular/router'
 import { Subject } from 'rxjs';
 declare var jquery:any;
@@ -15,7 +16,9 @@ class Person {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent implements OnInit,AfterViewInit {
+
 
   dtOptions: any = {};
   public show:boolean = true;
@@ -33,9 +36,9 @@ export class DashboardComponent implements OnInit,AfterViewInit {
   //     "lastName": "Yoda"
   //   }]
 
-  constructor(private renderer: Renderer,private service: DashboardService, private router: Router) { 
-   
-  }
+
+  constructor(private renderer: Renderer,private service: DashboardService, private router: Router) { }
+
   
   ngOnInit(){
     this.plot_dataTable();
@@ -75,6 +78,7 @@ export class DashboardComponent implements OnInit,AfterViewInit {
       'colvis',
       'csv'
     ]
+
   }
 }
 
@@ -111,6 +115,5 @@ export class DashboardComponent implements OnInit,AfterViewInit {
       }
     });
   }
-
 
 }

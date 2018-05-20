@@ -19,7 +19,7 @@ import {
   };
 
   import {API_URL} from '../../../app.component';
-  //import '../../../../assets/js/material-bootstrap-wizard.js';
+  import '../../../../assets/js/material-bootstrap-wizard.js';
 
 @Component({
   selector: 'app-login',
@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(loginDetails){
+    console.log(typeof(loginDetails));
     // Api call to validate user .
     this.service.validate_user(loginDetails,this.LOGIN_APPLICATION_API);    
   }
