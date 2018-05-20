@@ -25,7 +25,6 @@ export class AuthService {
     }
 
     validate_user(user: User, login_url:string) {
-        console.log(user,"aaaa")
             this.http.post(login_url, user).map(res => res.json()).subscribe((response)=>{
                 console.log(response);
                 if(response.login_status === "success"){
@@ -40,7 +39,6 @@ export class AuthService {
                     console.log("user doesn't exist ! please sign up !");
                     this.router.navigate(['signup']);
                 }
-                
               });
     
     }

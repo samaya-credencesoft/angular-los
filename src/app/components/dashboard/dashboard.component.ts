@@ -1,5 +1,5 @@
 import { DashboardService } from './../../services/dashboard_services/dashboard.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit,Renderer, ViewChild } from '@angular/core';
 import {Router} from '@angular/router'
 import { Subject } from 'rxjs';
 declare var jquery:any;
@@ -15,7 +15,7 @@ class Person {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit,AfterViewInit {
 
   dtOptions: any = {};
   public show:boolean = true;
@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit {
   dtTrigger: Subject<any> = new Subject();
   base = "http://localhost:8080/api/";
   get_applicants_url = this.base+"loanApplicants";
-
   user_data = [];
 
   // [
@@ -34,7 +33,7 @@ export class DashboardComponent implements OnInit {
   //     "lastName": "Yoda"
   //   }]
 
-  constructor(private service: DashboardService, private router: Router) { 
+  constructor(private renderer: Renderer,private service: DashboardService, private router: Router) { 
    
   }
   
@@ -49,27 +48,33 @@ export class DashboardComponent implements OnInit {
     "ajax":{"url":"http://localhost:8080/api/loanApplicants","dataSrc":""} ,
     "columns":[
       {title: 'id',data: 'id'},
+      {title: 'name',data: 'name'},
+      {title: 'email',data: 'email'},
       {title: 'loanAmount',data: 'loanAmount'},
       {title: 'aadharNumber',data: 'aadharNumber'},
+      {title: 'addressCity',data: 'addressCity'},
+      {title: 'addressState',data: 'addressState'},
+      
       {
-          "render": function(d, t, r){
-              var edit_btn = "<button type='button' class='btn btn-xs btn-primary edit' onclick='editFunction()' title='edit User'><i class='fa fa-pencil'></i></button>"
-              var $button = $(edit_btn, { });
-              return $button.prop("outerHTML");
-          }
-      },
-      {
-        "render": function(d, t, r){
-          var delete_btn ="<button type='button' class='btn btn-danger btn-xs delete' onclick='deleteFunction()' title='delete User'><i class='fa fa-times'></i></button>"
-          var $button = $(delete_btn, { });
-          return $button.prop("outerHTML");
+        title: 'Action',
+        render: function (data: any, type: any, full: any) {
+          console.log(data,full,type);
+          return "<button type='button' view-person-id="+full.id+" class='btn btn-xs btn-primary edit' title='edit User'>Edit</button>";
+        }
       }
-      }
+      
     ],
     columnDefs: [
-      { width: '2%', targets: 3, orderable: false},
-      { width: '2%', targets: 4, orderable: false}
-  ]
+      { width: '2%', targets: 3, orderable: false}
+    ],
+    // Declare the use of the extension in the dom parameter
+    dom: 'Bfrtip',
+    // Configure the buttons
+    buttons: [
+
+      'colvis',
+      'csv'
+    ]
   }
 }
 
@@ -83,7 +88,29 @@ export class DashboardComponent implements OnInit {
   }
 
   
-  editFunction(){
+  editFunction(s){
+    console.log(s);
     $("#loan_applicant_modal").modal('show');
   }
+
+  logout(e:Event)
+  {
+    e.preventDefault();
+    localStorage.setItem('isLoggedIn', "false");
+    this.router.navigate(['signin']);
+  }
+
+  ngAfterViewInit(): void {
+    this.renderer.listenGlobal('document', 'click', (event) => {
+      console.log(event );
+      console.log(event.target.hasAttribute("view-person-id"));
+      
+      if (event.target.hasAttribute("view-person-id")) {
+       console.log(event.target.getAttribute("view-person-id"));
+      //  this.myModal.nativeElement.className = 'modal fade show';
+      }
+    });
+  }
+
+
 }
