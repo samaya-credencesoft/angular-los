@@ -38,6 +38,8 @@ body{
     transition: 0.5s;
 }
 
+
+
 .panel{
     margin-bottom: 0px;
     border-radius:0px;
@@ -97,3 +99,4 @@ body{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
 }
+
