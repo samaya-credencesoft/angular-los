@@ -32,6 +32,8 @@ import { LogoutComponent } from './components/authentication_components/logout/l
 import {confirmEqualPasswordValidator } from './services/common_services/confirm-equal-passwords-validator.directive';
 import {BaseComponent} from './components/base_component/base.component';
 import { DataTablesModule } from 'angular-datatables';
+import { LosMasterComponent } from './components/los-master/los-master.component';
+import { StateMasterComponent } from './components/los_masters/state-master/state-master.component';
 
 @NgModule({
   imports: [
@@ -63,7 +65,9 @@ import { DataTablesModule } from 'angular-datatables';
      ForgotPasswordComponent,
      LogoutComponent,
      confirmEqualPasswordValidator,
-     BaseComponent
+     BaseComponent,
+     LosMasterComponent,
+     StateMasterComponent
     ],
   bootstrap: [AppComponent],
   providers:[

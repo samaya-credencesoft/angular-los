@@ -1,58 +1,4 @@
-<body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-        <a class="navbar-brand" href="#" data-toggle="tooltip" title="LOS">Loan Originating System</a>
-        <a class="navbar-brand"  data-toggle="tooltip" title="" (click)="toggle()"><i class="fa fa-stack-exchange" style="font-size: 24px;"></i></a>
-        </div>
-       
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/" (click)="logout($event)"data-toggle="tooltip" title="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-
-
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-toggle="tooltip" title="settings"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
-        </ul>
-    </div>
-</nav>
-
-<aside class="sidebar-dashboard"  >
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1" title="Master Creation">
-
-                <h4 class="panel-title">
-                    <span><i class="fa fa-user-plus" aria-hidden="true"></i></span><span>&nbsp; &nbsp; &nbsp;</span>     
-                    <a data-toggle="tooltip" title="master-creation">Master Creation<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                </h4>
-            </div>
-            <div id="collapse1" class="panel-collapse collapse in">
-            <div class="panel-body">
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span>Request For Loan</li>
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span>User Management</li>
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span>Third item</li>
-            </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2" title="Dashboard">
-                <h4 class="panel-title">
-                    <span><i class="fa fa-dashboard" ></i></span><span>&nbsp; &nbsp; &nbsp;</span>
-                    <a data-toggle="tooltip" title="dashboard">Dashboard<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                </h4>
-            </div>
-            <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">
-                <li class="list-group-item">First item</li>
-                <li class="list-group-item">Second item</li>
-                <li class="list-group-item">Third item</li>
-            </div>
-            </div>
-        </div>
-    </div> 
-</aside>
-
+<app-base></app-base>
 <div class="dashboard-content">
     <div class="container-fluid">
         <div class="row">
@@ -107,5 +53,3 @@
 
 
 
-
-</body>
