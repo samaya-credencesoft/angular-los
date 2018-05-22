@@ -5,50 +5,52 @@ import {Router} from '@angular/router'
 import { Subject } from 'rxjs';
 declare var jquery:any;
 declare var $ :any;
-
-class Person {
-  id: number;
-  firstName: string;
-  lastName: string;
+export class User {
+  constructor(public name: string) {
+  }
 }
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-
 export class DashboardComponent implements OnInit,AfterViewInit {
 
 
   dtOptions: any = {};
-  public show:boolean = true;
-  public buttonName:any = 'Show';
   flag = false;
   dtTrigger: Subject<any> = new Subject();
   base = "http://localhost:8080/api/";
   get_applicants_url = this.base+"loanApplicants";
-  user_data = [];
+  static applicants: any = [];
+ 
 
-  // [
-  //   {
-  //     "id": 860,
-  //     "firstName": "Superman",
-  //     "lastName": "Yoda"
-  //   }]
+  isClassVisible = false;
 
 
-  constructor(private renderer: Renderer,private service: DashboardService, private router: Router) { }
 
+
+  constructor(private renderer: Renderer,private service: DashboardService, private router: Router) { 
+    
+  }
   
   ngOnInit(){
     this.plot_dataTable();
   }
 
-  // Show all loan applicants details . 
+  // Show all loan applicants Details . 
   plot_dataTable(){
+    var temp:any = []
 
     this.dtOptions = {
-    "ajax":{"url":"http://localhost:8080/api/loanApplicants","dataSrc":""} ,
+    "ajax":{"url":"http://localhost:8080/api/loanApplicants","dataSrc": function ( json ) {
+      temp = json;
+      console.log(json);
+      DashboardComponent.applicants = temp;
+      return json
+  },
+      } ,
     "columns":[
       {title: 'id',data: 'id'},
       {title: 'name',data: 'name'},
@@ -57,63 +59,42 @@ export class DashboardComponent implements OnInit,AfterViewInit {
       {title: 'aadharNumber',data: 'aadharNumber'},
       {title: 'addressCity',data: 'addressCity'},
       {title: 'addressState',data: 'addressState'},
-      
       {
         title: 'Action',
-        render: function (data: any, type: any, full: any) {
-          console.log(data,full,type);
-          return "<button type='button' view-person-id="+full.id+" class='btn btn-xs btn-primary edit' title='edit User'>Edit</button>";
+        render: function (data: any, type: any, full: any,meta:any) {
+          return "<button type='button' view-person-id="+meta.row+" class='btn btn-xs btn-primary edit' title='edit User'>Edit</button>";
         }
       }
-      
     ],
     columnDefs: [
       { width: '2%', targets: 3, orderable: false}
     ],
-    // Declare the use of the extension in the dom parameter
     dom: 'Bfrtip',
-    // Configure the buttons
     buttons: [
-
       'colvis',
       'csv'
     ]
-
   }
+  
 }
 
-  // Code to toggle the sidebar .
-  toggle() {
-    this.show = !this.show;
-    if(this.show)  
-      this.buttonName = "Hide";
-    else
-      this.buttonName = "Show";
-  }
+ 
 
-  
-  editFunction(s){
-    console.log(s);
-    $("#loan_applicant_modal").modal('show');
-  }
-
-  logout(e:Event)
-  {
-    e.preventDefault();
-    localStorage.setItem('isLoggedIn', "false");
-    this.router.navigate(['signin']);
-  }
 
   ngAfterViewInit(): void {
     this.renderer.listenGlobal('document', 'click', (event) => {
-      console.log(event );
       console.log(event.target.hasAttribute("view-person-id"));
-      
       if (event.target.hasAttribute("view-person-id")) {
-       console.log(event.target.getAttribute("view-person-id"));
-      //  this.myModal.nativeElement.className = 'modal fade show';
+        var obj = DashboardComponent.applicants;
+        // Open the edit form .
+        $("#editApplicant").modal('show');
       }
     });
   }
+
+  
+  
+
+
 
 }

@@ -100,3 +100,14 @@ body{
     border-top-right-radius: 0px;
 }
 
+
+.sidebar{
+	width: 60px;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.side-nav{
+	transition: 0.5s !important;
+	overflow: hidden !important;
+}
