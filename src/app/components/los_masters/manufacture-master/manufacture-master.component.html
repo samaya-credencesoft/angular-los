@@ -26,33 +26,33 @@
             </div>
             <div class="form-group">
 								<label>PAN Number</label>
-								<input type="text" class="form-control">
+								<input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" class="form-control">
             </div>
             <div class="form-group">
 								<label>GST Number</label>
-								<input type="text" class="form-control">
+								<input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" class="form-control">
             </div>
             <div class="form-group">
                 <label>Loan Type/Product</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="optionsRadios" checked="true">
+                      <input type="radio" name="productRadios" checked="true">
                       PL(Personal Loan)
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" name="productRadios">
                       HL(Home Loan)
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" name="productRadios">
                       BL(Business Loan)
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" name="productRadios">
                       EL(Education Loan)
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" name="productRadios">
                       EP(Equipment Loan)
                     </label>
                   </div>
@@ -65,6 +65,9 @@
 								<label>Bank Account Details</label>
 								<input type="text" class="form-control">
             </div>
+            <button class="btn btn-danger btn-round">
+              Save
+            </button>
         
         
         </div>
