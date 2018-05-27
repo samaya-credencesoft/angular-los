@@ -47,6 +47,7 @@ export class UserManagementComponent implements OnInit {
         var obj = data_list[event.target.getAttribute("user_id")]
      
         this.model = new User();
+        this.model.id = obj.id;
         this.model.email = obj.email;this.model.firstname = obj.firstname;
         this.model.lastname = obj.lastname;this.model.mobileNumber = obj.mobileNumber;
         this.model.companyName = obj.companyName;this.model.status = obj.status;
