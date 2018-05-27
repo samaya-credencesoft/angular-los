@@ -20,7 +20,8 @@ export class LoanApplication {
       public profession:string,
       public loanType:string,
       public pan:string,
-      public landmark:string 
+      public landmark:string,
+      public loanStatus:string  
 
     ) {  }
   }

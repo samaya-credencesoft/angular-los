@@ -5,10 +5,12 @@ export class User {
     id: string;
     email: string;
     password: string;
-    name: string;
+    firstname: string;
+    lastname: string;
     mobileNumber: number;
     companyName: string;
     uuid: string;
+    status: string;
 
     constructor() {
     }
@@ -18,7 +20,8 @@ export class User {
             user.id === null &&
             user.mobileNumber === null &&
             user.companyName === null &&
-            user.name === null &&
+            user.firstname === null &&
+            user.lastname === null &&
             user.uuid == null 
             
     }

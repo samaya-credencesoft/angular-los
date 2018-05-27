@@ -33,35 +33,89 @@ export class ForgotPasswordComponent implements OnInit {
  
   constructor(private route: ActivatedRoute,private router: Router,private logger:Logger,
     private http:Http) { }
-    public FORGOT_PASSWORD_API = API_URL+ '/forgotPassword';
-   
+    public PASSWORD_RESET_API = API_URL+ '/ForgotPassword';
+
+  selectedId : any;
   password : any;
-  email : boolean;
-  //emailPattern = "/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/";
-
-
-ngOnInit() {
-   
+  confirmPassword : any;
+  passwordBlankMessage : any = false;
+  passwordNotMatchedError : any = false;
+  passwordMatchedSuccess : any = false;
+  ngOnInit() {
+    this.selectedId = this.route.snapshot.queryParamMap.get("id");
   }
- 
 
-  //forgot password function
-  forgotPassword(email_val)
+  
+  pwd(passwordValue)
   {
-    // console.log(API_URL);
-    // console.log(email_val);
-      this.http.post(this.FORGOT_PASSWORD_API, email_val).map(res => res.json()).subscribe((response)=>{
-        console.log(response);
-        if(response.result === "success")
+    this.password = passwordValue;
+    //console.log(this.password);
+    this.passwordMatched();
+  }
+  
+  confPwd(confirmPasswordValue)
+  {
+    this.confirmPassword = confirmPasswordValue;
+    //console.log(this.confirmPassword);
+    this.passwordMatched();
+  }
+  
+
+  
+  
+  //Password Reset function
+  forgotPassword(password){
+   
+    return this.http.post(this.PASSWORD_RESET_API, password).subscribe
+    ( 
+      data => {
+          this.logger.log(data.json)
+      alert("Successfully Login.");
+    });
+  
+    
+    //password and confirm password matches 
+    // if(value.password == value.confirmPassword){
+    //   console.log("matched");
+    //   const req = this.http.post('localhost:4200', {
+    //   body: value
+    // })
+    //   .subscribe(
+    //     res => {
+    //       console.log(res);
+    //     },
+    //     err => {
+    //       console.log("Error occured");
+    //     }
+    //   );
+    // }else{
+    //   alert("password doesn't matched");
+    // }
+    
+  }
+
+  
+  passwordMatched()
+  {
+    if(this.password === '' || this.confirmPassword === '')
+    {
+      this.passwordNotMatchedError = false;
+      this.passwordMatchedSuccess = false;
+    }
+    else
+    {
+        if(this.password !== this.confirmPassword)
         {
-          console.log("reset password link sent to your email id");
-          this.router.navigate(['signin']);
+          this.passwordNotMatchedError = true;
+          this.passwordMatchedSuccess = false;
         }
         else
         {
-          console.log("email id doesn't exist");
+          this.passwordMatchedSuccess = true;
+          this.passwordNotMatchedError = false;
         }
-      });
-
-  }  
+    }
+    
+  }
+  
 }

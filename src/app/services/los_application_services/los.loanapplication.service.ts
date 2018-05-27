@@ -11,7 +11,7 @@ import {
   import { HttpErrorResponse } from '@angular/common/http';
   import { Injectable } from '@angular/core';
   import { Observable } from 'rxjs/Observable';
-  import { LoanApplication } from '../../components/los_application/loan.Application';
+  import { LoanApplication } from '../../components/los_application/loanApplication';
   const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -23,14 +23,16 @@ export class CustomerOnboardingService {
         private http:Http
     ){}
 
-    public LOAN_APPLICATION_API = API_URL+ '/newLoanApplication';
+    public CREATE_LOAN_APPLICATION_API = API_URL+ '/newLoanApplication';
+   
+
     public createLoanApplication(loanApplication:LoanApplication) {
         console.log(LoanApplication);
-          return this.http.post(this.LOAN_APPLICATION_API, loanApplication).subscribe
+          return this.http.post(this.CREATE_LOAN_APPLICATION_API, loanApplication).subscribe
           ( 
             data => {
                 this.logger.log(data.json)
-            alert("User created successfully.");
+            alert("Data Saved Successfully ");
           });
   
     };

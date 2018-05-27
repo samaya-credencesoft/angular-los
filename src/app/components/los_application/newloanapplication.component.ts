@@ -13,7 +13,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 import { AddressService } from './../../services/common_services/address.service';
 import { CustomerOnboardingService } from './../../services/los_application_services/los.loanapplication.service';
 import { Logger } from './../../services/common_services/logger.service';
-import { LoanApplication } from './loan.Application';
+import { LoanApplication } from './loanApplication';
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -35,8 +35,8 @@ export class LoanApplicationNew implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  loanApplication = new LoanApplication('','','','','','','','','','','','','','','','','','','','');
-  model=new LoanApplication('','','','','','','','','','','','','','','','','','','','');
+  loanApplication = new LoanApplication('','','','','','','','','','','','','','','','','','','','','');
+  model=new LoanApplication('','','','','','','','','','','','','','','','','','','','','');
   constructor(private _formBuilder: FormBuilder , 
     private http:Http ,
     private logger:Logger,
@@ -52,7 +52,7 @@ export class LoanApplicationNew implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-    this.loanApplication=new LoanApplication('','','','','','','','','','','','','','','','','','','','');
+    this.loanApplication=new LoanApplication('','','','','','','','','','','','','','','','','','','','','');
   }
   getAddressDetailsByPostCode(pincode) {
     
@@ -138,14 +138,13 @@ storeLoanApplication(){
   onSubmit() { 
     this.submitted = true; 
     this.loanApplication=this.model;
-    this.logger.log("BeforeSubmit Check"+JSON.stringify(this.model) ) ;
     this.custOnbService.createLoanApplication(this.loanApplication);
   }
   
   newLoanApplication() {
     this.logger.log("BeforeSubmit Check"+JSON.stringify(this.model) ) ;
     this.loanApplication=this.model;
-    this.loanApplication = new LoanApplication('','','','','','','','','','','','','','','','','','','','');
-    this.logger.log(this.loanApplication);
   }
+
+
 }

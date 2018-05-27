@@ -57,5 +57,9 @@ export class AuthService {
             .catch(AuthService.handleError);
     }
 
+    public updateUser(user:User) {
+        return this.http.put(API_URL+ '/updateUser', user);
+    };
+
 
 }

@@ -1,0 +1,8 @@
+.dashboard-content{
+    height: auto;
+    width: calc(100% - 300px);
+    margin-left: 275px;
+    padding: 15px;
+    overflow: hidden;
+    /* background: #fafafa ; */
+}

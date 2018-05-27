@@ -1,0 +1,77 @@
+<app-base></app-base>
+<div class="dashboard-content" [ngClass]="{'content_box': isClassVisible}" >
+  <div class="container-fluid">
+    <!-- DataTable -->
+    <div class="row top">
+      <div  id="" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 top30  ">
+            <table  datatable [dtOptions]="dtOptions"  [dtTrigger]="dtTrigger" class="table table-striped table-bordered" style="width:100%"></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Usert MODAL -->
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notice">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                <h5 class="modal-title" id="myModalLabel">Edit User</h5>
+            </div>
+            <div class="modal-body">
+
+                <form (ngSubmit)="onEditUser(editUserForm.value)" #editUserForm="ngForm"> 
+                    
+                    <div class="form-group">
+                        <label for="firstname">First Name:</label>
+                        <input type="text" class="form-control" [(ngModel)]="model.firstname" #firstname="ngModel" placeholder="First Name" name="firstname">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" class="form-control" [(ngModel)]="model.lastname" #lastName="ngModel" name="lastName" placeholder="Last Name" >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" name="email" placeholder="Email" >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="companyName">Company Name:</label>
+                        <input type="text" class="form-control" [(ngModel)]="model.companyName" #companyName="ngModel" name="companyName" placeholder="Company Name" >
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="companyName">Mobile Number:</label>
+                        <input type="number" class="form-control" [(ngModel)]="model.mobileNumber" #mobile="ngModel" name="mobile" placeholder="Mobile Number" >
+                    </div>
+                    
+               
+                    <div class="form-group">
+                            <label for="status">Status:</label>
+                            <select class='select-option form-control' name="status" required [(ngModel)]='model.status' #status="ngModel" >
+                                <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
+                            </select>
+                    </div>
+                    <div class="register-button">
+                        <button  type="submit"  [disabled]="!editUserForm.valid"  class="btn btn-danger btn-round" data-toggle="modal" >
+                            Edit
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>  
+<!--  End Modal -->
+
+
+
+
+
+  
+
+
+

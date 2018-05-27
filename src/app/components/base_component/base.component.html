@@ -20,17 +20,29 @@
 <aside class="sidebar-dashboard side-nav"  [ngClass]="{'sidebar': isClassVisible, 'sidebar_mob': isMobClassVissible}" >
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
-            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1" title="Master CreationA">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1" title="Master Creation">
                 <h4 class="panel-title">
-                    <span><i class="fa fa-user-plus" aria-hidden="true"></i></span>     
+                    <span><i class="fa fa-plus-circle" aria-hidden="true"></i></span>     
                     <a data-toggle="tooltip"  title="master-creation" *ngIf ="show"><span class="mob_none">&nbsp; &nbsp; &nbsp;Master Creation<i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
                 </h4>
             </div>
-            <div id="collapse1" class="panel-collapse collapse in">
+            <div id="collapse1" class="panel-collapse collapse ">
             <div class="panel-body">
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i></span><span *ngIf ="show" class="mob_none">&nbsp; &nbsp; &nbsp;First item</span></li>
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i></span><span *ngIf ="show" class="mob_none">&nbsp; &nbsp; &nbsp;Second item</span></li>
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i></span><span *ngIf ="show" class="mob_none">&nbsp; &nbsp; &nbsp;Third item</span></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/stateMaster']">StateMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/cityMaster']">CityMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/districtMaster']">DistrictMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/countryMaster']">CountryMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/regionMaster']">RegionMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/branchMaster']">BranchMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/salesmanagerMaster']">SalesManagerMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/sourcingMaster']">SourcingMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/supplierMaster']">SupplierMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/manufactureMaster']">ManufactureMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/modelMaster']">ModelMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/departmentMaster']">DepartmentMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/bounceResonMaster']">BounceReasonMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/productMaster']">ProductMaster</a></li>
+                    <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span><a [routerLink]="['/schemeMaster']">SchemeMaster</a></li>
             </div>
             </div>
         </div>
@@ -38,15 +50,17 @@
             <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2" title="Dashboard">
                 <h4 class="panel-title">
                     <span><i class="fa fa-dashboard" ></i></span>
-                    <a data-toggle="tooltip" title="dashboard" *ngIf ="show"><span class="mob_none">&nbsp; &nbsp; &nbsp;Dashboard<i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                    <a data-toggle="tooltip" title="dashboard" *ngIf ="show"><span class="mob_none">&nbsp; &nbsp; &nbsp;<a [routerLink]="['/dashboard']">Dashboard</a></span></a>
                 </h4>
             </div>
-            <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">
-                <li class="list-group-item">First item</li>
-                <li class="list-group-item">Second item</li>
-                <li class="list-group-item">Third item</li>
-            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2" title="User Management">
+                <h4 class="panel-title">
+                    <span><i class="fa  fa-users" ></i></span>
+                    <a data-toggle="tooltip" title="User Management" *ngIf ="show"><span class="mob_none">&nbsp; &nbsp; &nbsp;<a [routerLink]="['/userManagement']">User Management</a></span></a>
+                </h4>
             </div>
         </div>
     </div> 

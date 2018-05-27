@@ -56,7 +56,6 @@
 .card p{
     
     text-transform: uppercase;
-    font-weight: bold;
     color: #fff;
 }
 
@@ -126,8 +125,14 @@
 	transition: 0.5s !important;
 }
 
-
-
+.top{
+    margin-top:50px; 
+}
+.counter{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
 
 
 
