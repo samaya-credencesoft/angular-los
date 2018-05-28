@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../services/common_services/auth.service';
+import {Message} from 'primeng/components/common/api';
 
 @Component({
   selector: 'app-bounce-reason-master',

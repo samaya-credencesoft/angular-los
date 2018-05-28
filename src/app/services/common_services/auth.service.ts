@@ -6,6 +6,7 @@ import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
 
 import {User} from '../../components/authentication_components/signup/user';
+import {Branchuser } from '../../components/los_masters/branch-master/branch-user';
 import {API_URL} from '../../app.component';
 
 
@@ -61,5 +62,11 @@ export class AuthService {
         return this.http.put(API_URL+ '/updateUser', user);
     };
 
+    branchMasterDetails(branchuser:Branchuser){
+        return this.http.post(API_URL + '/branchMasterDetails', branchuser)
+        .map(response => response.json() as User)
+        .map(currentUser => !User.isNull(currentUser))
+        .catch(AuthService.handleError);
+    }
 
 }

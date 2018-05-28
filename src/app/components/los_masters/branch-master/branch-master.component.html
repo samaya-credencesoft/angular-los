@@ -15,40 +15,48 @@
         </div>
         <div class="modal-body">
 
-
-          <div class="form-group">
-            <label>Branch Name</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Area Code</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Select Region <b class="caret"></b></button>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-header">Region List</li>
-              <li><a href="#pablo">Demo</a></li>
-            </ul>
-          </div>
-          <div class="form-group">
-            <label>Active Status</label>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="optionsRadios" checked="true">
-                  Active
-                </label>
-                <label>
-                  <input type="radio" name="optionsRadios">
-                  Inactive
-                </label>
-              </div>
-          </div>
-          <button class="btn btn-danger btn-round">
-            Save
-          </button>
-        
-        
+          <form (ngSubmit)="branchMasterDetails(branchMasterForm.value)" #branchMasterForm="ngForm">
+            <div class="form-group">
+              <label>Branch Name</label>
+              <input type="text" ngModel #branchName="ngModel" name="branchName" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Branch Manager Name</label>
+              <input type="text" ngModel name="branchManagerName" #branchManagerName="ngModel" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Designation</label>
+              <input type="text" ngModel name="designation" #designation="ngModel" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Branch Code</label>
+              <input type="text" ngModel name="branchCode" #branchCode="ngModel" class="form-control">
+            </div>
+            <!-- <div class="dropdown">
+              <button class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Select Region <b class="caret"></b></button>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li class="dropdown-header">Region List</li>
+                <li><a>Demo</a></li>
+              </ul>
+            </div> -->
+            <div class="form-group">
+              <label>Active Status</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" ngModel #activeStatus="ngModel" name="activeStatus" value="active" checked="true">
+                    Active
+                  </label>
+                  <label>
+                    <input type="radio" ngModel #activeStatus="ngModel" name="activeStatus" value="inactive">
+                    Inactive
+                  </label>
+                </div>
+            </div>
+            <button class="btn btn-danger btn-round">
+              Save
+            </button>
+          
+          </form>
         </div>
       </div>
     </div>
