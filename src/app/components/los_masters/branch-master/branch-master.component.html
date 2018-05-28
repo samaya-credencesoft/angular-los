@@ -18,19 +18,19 @@
           <form (ngSubmit)="branchMasterDetails(branchMasterForm.value)" #branchMasterForm="ngForm">
             <div class="form-group">
               <label>Branch Name</label>
-              <input type="text" ngModel #branchName="ngModel" name="branchName" class="form-control">
+              <input type="text" class="form-control" [(ngModel)]="model.branchName" #branchName="ngModel" placeholder="Branch Name" name="branchName">
             </div>
             <div class="form-group">
               <label>Branch Manager Name</label>
-              <input type="text" ngModel name="branchManagerName" #branchManagerName="ngModel" class="form-control">
+              <input type="text" class="form-control" [(ngModel)]="model.branchManagerName" #branchManagerName="ngModel" placeholder="Branch Manager Name" name="branchManagerName">
             </div>
             <div class="form-group">
               <label>Designation</label>
-              <input type="text" ngModel name="designation" #designation="ngModel" class="form-control">
+              <input type="text" class="form-control" [(ngModel)]="model.designation" #designation="ngModel" placeholder="Designation" name="designation">
             </div>
             <div class="form-group">
               <label>Branch Code</label>
-              <input type="text" ngModel name="branchCode" #branchCode="ngModel" class="form-control">
+              <input type="text" class="form-control" [(ngModel)]="model.branchCode" #branchCode="ngModel" placeholder="BranchCode" name="branchCode">
             </div>
             <!-- <div class="dropdown">
               <button class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Select Region <b class="caret"></b></button>
@@ -43,11 +43,11 @@
               <label>Active Status</label>
                 <div class="radio">
                   <label>
-                    <input type="radio" ngModel #activeStatus="ngModel" name="activeStatus" value="active" checked="true">
+                    <input type="radio" [(ngModel)]="model.activeStatus" name="activeStatus" value="active" checked="true">
                     Active
                   </label>
                   <label>
-                    <input type="radio" ngModel #activeStatus="ngModel" name="activeStatus" value="inactive">
+                    <input type="radio" [(ngModel)]="model.activeStatus"name="activeStatus" value="inactive">
                     Inactive
                   </label>
                 </div>
