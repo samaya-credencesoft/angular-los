@@ -35,8 +35,8 @@ export class LoanApplicationNew implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  loanApplication = new LoanApplication('','','','','','','','','','','','','','','','','','','','','');
-  model=new LoanApplication('','','','','','','','','','','','','','','','','','','','','');
+  loanApplication = new LoanApplication('','','','','','','','','','','','','','','','','','','','','NEW');
+  model=new LoanApplication('','','','','','','','','','','','','','','','','','','','','NEW');
   constructor(private _formBuilder: FormBuilder , 
     private http:Http ,
     private logger:Logger,
@@ -52,7 +52,6 @@ export class LoanApplicationNew implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-    this.loanApplication=new LoanApplication('','','','','','','','','','','','','','','','','','','','','');
   }
   getAddressDetailsByPostCode(pincode) {
     
@@ -138,6 +137,7 @@ storeLoanApplication(){
   onSubmit() { 
     this.submitted = true; 
     this.loanApplication=this.model;
+    console.log(this.model);
     this.custOnbService.createLoanApplication(this.loanApplication);
   }
   
