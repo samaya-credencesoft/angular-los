@@ -9,7 +9,7 @@ import {
   Headers,
   HttpModule
   } from '@angular/http';
-  import { Branchuser } from './branch-user';
+  import { BranchMaster } from './BranchMaster';
   import { HttpErrorResponse } from '@angular/common/http';
   import {ErrorStateMatcher} from '@angular/material/core';
   
@@ -19,17 +19,19 @@ import {
   styleUrls: ['./branch-master.component.css']
 })
 export class BranchMasterComponent implements OnInit {
-  model: Branchuser;
+  model: BranchMaster;
   messages: Message[] = [];
 
  
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) { 
+    this.model = new BranchMaster();
+  }
 
   ngOnInit() {
   }
 
   branchMasterDetails(details){
-    console.log(details);
+    console.log(this.model);
     this.authService
           .branchMasterDetails(this.model)
           .subscribe(isBranchMasterDetails => {

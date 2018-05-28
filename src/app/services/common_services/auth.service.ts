@@ -6,7 +6,11 @@ import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
 
 import {User} from '../../components/authentication_components/signup/user';
-import {Branchuser } from '../../components/los_masters/branch-master/branch-user';
+import { BranchMaster } from '../../components/los_masters/branch-master/BranchMaster';
+import { DepartmentMaster } from '../../components/los_masters/department-master/DepartmentMaster';
+import { ManufactureMaster } from '../../components/los_masters/manufacture-master/ManufactureMaster';
+import { SupplierMaster } from '../../components/los_masters/supplier-master/SupplierMaster';
+
 import {API_URL} from '../../app.component';
 
 
@@ -58,12 +62,41 @@ export class AuthService {
             .catch(AuthService.handleError);
     }
 
-    branchMasterDetails(branchuser:Branchuser){
-        return this.http.post(API_URL + '/branchMasterDetails', branchuser)
-        .map(response => response.json() as User)
-        .map(currentUser => !User.isNull(currentUser))
+    public updateUser(user:User) {
+        return this.http.put(API_URL+ '/updateUser', user);
+    };
+
+    branchMasterDetails(branc:BranchMaster){
+
+        return this.http.post(API_URL + '/branchMasterDetails', branc)
+        .map(response => response.json() as BranchMaster)
+        .map(branc => !BranchMaster.isNull(branc))
         .catch(AuthService.handleError);
     }
 
+
+    departmentMasterDetails(department:DepartmentMaster){
+
+        return this.http.post(API_URL + '/departmentMasterDetails', department)
+        .map(response => response.json() as DepartmentMaster)
+        .map(branc => !DepartmentMaster.isNull(department))
+        .catch(AuthService.handleError);
+    }
+
+    manufactureMasterDetails(manufacture:ManufactureMaster){
+
+        return this.http.post(API_URL + '/manufactureMasterDetails', manufacture)
+        .map(response => response.json() as ManufactureMaster)
+        .map(branc => !ManufactureMaster.isNull(manufacture))
+        .catch(AuthService.handleError);
+    }
+
+    supplierMasterDetails(supplier:SupplierMaster){
+
+        return this.http.post(API_URL + '/supplierMasterDetails', supplier)
+        .map(response => response.json() as SupplierMaster)
+        .map(branc => !SupplierMaster.isNull(supplier))
+        .catch(AuthService.handleError);
+    }
 
 }
