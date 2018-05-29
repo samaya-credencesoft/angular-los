@@ -17,6 +17,7 @@ export class BaseComponent implements OnInit {
   isClassVisibleContainer = "false";
   logo = "Loan Originating System"	;
 
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -39,12 +40,6 @@ export class BaseComponent implements OnInit {
     this.logo = this.isClassVisible?"LOS":"Loan Originating System";
 
      this.show = !this.show;
-
-    if(this.show)  
-      this.buttonName = "Hide";
-    else
-      this.buttonName = "Show";
   }
-
-
+  
 }

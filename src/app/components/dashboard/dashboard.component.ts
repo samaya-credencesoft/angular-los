@@ -41,6 +41,34 @@ export class DashboardComponent implements OnInit,AfterViewInit {
   isClassVisible = false;
   model = new LoanApplication('','','','','','','','','','','','','','','','','','','','','');
 
+  ltypes = [
+    {value: 'student loan-0', viewValue: 'Student loan'},
+    {value: 'personal loan-1', viewValue: 'Personal loan'},
+    {value: 'home loan-2', viewValue: 'Home loan'},
+    {value: 'business loan-3', viewValue: 'Business loan'},
+    {value: 'loan against property-4', viewValue: 'Loan against property'},
+    {value: 'loan for educational institutes-5', viewValue: 'Loan for educational institutes'},
+    {value: 'new car loan-6', viewValue: 'New car loan'},
+    {value: 'used car loan-7', viewValue: 'Used car loan'},
+    {value: 'two wheeler loan-8', viewValue: 'Two wheeler loan'}
+  ];
+
+  customers = [
+    {value: 'individual-0', viewValue: 'Individual'},
+    {value: 'public ltd-1', viewValue: 'Public Ltd'},
+    {value: 'private ltd-2', viewValue: 'Private Ltd'},
+    {value: 'llp-3', viewValue: 'LLP'},
+    {value: 'partnership-4', viewValue: 'Partnership'},
+    {value: 'proprietorship-5', viewValue: 'Proprietorship'},
+    {value: 'society-6', viewValue: 'Society'},
+    {value: 'trust-7', viewValue: 'Trust'},
+    {value: 'school-8', viewValue: 'School'}
+  ];
+
+  genders = [
+    {value: 'male-0', viewValue: 'Male'},
+    {value: 'female-1', viewValue: 'Female'}
+  ];
 
   constructor(private renderer: Renderer,private service: DashboardService, private router: Router) { 
    

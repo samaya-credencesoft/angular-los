@@ -52,77 +52,154 @@
                 <h5 class="modal-title" id="myModalLabel">Edit Applicant</h5>
             </div>
             <div class="modal-body">
-                <form (ngSubmit)="onEdit(edit.value)" #edit="ngForm"> 
+                
                    
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" [(ngModel)]="model.name" #name="ngModel" placeholder="Enter Name" name="name">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="pwd">AadharNumber:</label>
-                        <input type="text" class="form-control" [(ngModel)]="model.aadharNumber" #aadharNumber="ngModel" placeholder="Enter AadharNumber" name="aadharNumber">
-                    </div>
+                  
+              
 
-                    <div class="form-group">
-                        <label for="name">Pan Number:</label>
-                        <input type="text" class="form-control" [(ngModel)]="model.pan" #pan="ngModel" placeholder="Enter Pan Number" name="pan">
-                    </div>
                     
-                    <div class="form-group">
-                        <label for="pwd">Mobile Number:</label>
-                        <input type="text" class="form-control" [(ngModel)]="model.mobileNumber" #mobileNumber="ngModel" placeholder="Enter MobileNumber" name="mobileNumber">
-                    </div>
+                    
+                  
                       
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" placeholder="Enter email" name="email">
-                    </div>
                     
-                    <div class="form-group">
-                        <label for="pwd">Annual Income:</label>
-                        <input type="text" class="form-control" [(ngModel)]="model.annualIncome" #annualIncome="ngModel" placeholder="Enter Annual Income" name="annualIncome">
-                    </div>
+                    
+                    
                       
-                    <div class="form-group">
-                        <label for="email">Dob:</label>
-                        <input type="email" class="form-control" [(ngModel)]="model.dob" #dob="ngModel" placeholder="Enter Dob" name="dob">
-                    </div>
+                   
                     
-                    <div class="form-group">
-                        <label for="pwd">Address:</label>
-                        <input type="text" class="form-control" [(ngModel)]="model.address" #address="ngModel" placeholder="Enter Address" name="address">
-                    </div>
-                      
-                    <div class="form-group">
-                        <label for="email">City:</label>
-                        <input type="email" class="form-control" [(ngModel)]="model.addressCity" #addressCity="ngModel" placeholder="Enter City" name="addressCity">
-                    </div>
                     
-                    <div class="form-group">
-                        <label for="email">State:</label>
-                        <input type="email" class="form-control" [(ngModel)]="model.addressState" #addressState="ngModel" placeholder="Enter State" name="addressState">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="loanAmount">Loan Amount:</label>
-                        <input type="number" class="form-control" [(ngModel)]="model.loanAmount" #loanAmount="ngModel" placeholder="Enter LoanAmount" name="loanAmount">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="loanTenure">Loan Tenure:</label>
-                        <input type="number" class="form-control" [(ngModel)]="model.loanTenure" #loanAmount="ngModel" placeholder="Enter LoanTenure" name="loanTenure">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="loanStatus">Loan Status:</label>
-                        <select class='select-option form-control' name="loanStatus" required [(ngModel)]='model.loanStatus' #loanStatus="ngModel" >
-                            <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
-                        </select>
-                    </div>
+               
 
                     
-                    <button  type="submit"  class="btn btn-danger btn-block" data-toggle="modal" >Edit</button>
+                    
+             
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#personal_details">Personal Details</a></li>
+                    <li><a data-toggle="tab" href="#address">Address</a></li>
+                    <li><a data-toggle="tab" href="#loan_details">Loan Details</a></li>
+                </ul>
+                <form (ngSubmit)="onEdit(edit.value)" #edit="ngForm"> 
+                    <div class="tab-content">
+                        <div id="personal_details" class="tab-pane fade in active">
+
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.name" #name="ngModel" placeholder="Enter Name" name="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" placeholder="Enter email" name="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pwd">Mobile Number:</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.mobileNumber" #mobileNumber="ngModel" placeholder="Enter MobileNumber" name="mobileNumber">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Dob:</label>
+                                <input type="email" class="form-control" [(ngModel)]="model.dob" #dob="ngModel" placeholder="Enter Dob" name="dob">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender">Gender:</label>
+                                <select class='select-option form-control' name="gender" required [(ngModel)]='model.gender' #gender="ngModel" >
+                                    <option class='option' *ngFor='let option of genders' [value]="option.viewValue">{{option.viewValue}}</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Pan Number:</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.pan" #pan="ngModel" placeholder="Enter Pan Number" name="pan">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pwd">AadharNumber:</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.aadharNumber" #aadharNumber="ngModel" placeholder="Enter AadharNumber" name="aadharNumber">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profession">Profession:</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.profession" #profession="ngModel" placeholder="Enter Profession" name="profession">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="annualIncome">Annual Income:</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.annualIncome" #annualIncome="ngModel" placeholder="Enter Annual Income" name="annualIncome">
+                            </div>
+
+                        </div>
+                        
+                        <div id="address" class="tab-pane fade">
+
+                            <div class="form-group">
+                                <label for="pinCode">PinCode:</label>
+                                <input type="number" class="form-control" [(ngModel)]="model.pinCode" #pinCode="ngModel" placeholder="Pin Code" name="pinCode">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pwd">Address:</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.address" #address="ngModel" placeholder="Enter Address" name="address">
+                            </div>
+                                
+                            <div class="form-group">
+                                <label for="email">City:</label>
+                                <input type="email" class="form-control" [(ngModel)]="model.addressCity" #addressCity="ngModel" placeholder="Enter City" name="addressCity">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">State:</label>
+                                <input type="email" class="form-control" [(ngModel)]="model.addressState" #addressState="ngModel" placeholder="Enter State" name="addressState">
+                            </div>
+                                                    
+                            <div class="form-group">
+                                <label for="country">Country :</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.addressCountry" #addressCountry="ngModel" placeholder="Enter Country" name="addressCountry">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="landmark">Landmark:</label>
+                                <input type="text" class="form-control" [(ngModel)]="model.landmark" #landmark="ngModel" placeholder="Enter Landmark" name="landmark">
+                            </div>
+                        </div>
+
+                        <div id="loan_details" class="tab-pane fade">
+
+                            <div class="form-group">
+                                <label for="loanAmount">Loan Amount:</label>
+                                <input type="number" class="form-control" [(ngModel)]="model.loanAmount" #loanAmount="ngModel" placeholder="Enter LoanAmount" name="loanAmount">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="loanTenure">Loan Tenure:</label>
+                                <input type="number" class="form-control" [(ngModel)]="model.loanTenure" #loanAmount="ngModel" placeholder="Enter LoanTenure" name="loanTenure">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="loanType">LoanType:</label>
+                                <select class='select-option form-control' name="loanType" required [(ngModel)]='model.loanType' #loanType="ngModel" >
+                                    <option class='option' *ngFor='let option of ltypes' [value]="option.viewValue">{{option.viewValue}}</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerCategory">Customer Category:</label>
+                                <select class='select-option form-control' name="customerCategory" required [(ngModel)]='model.customerCategory' #customerCategory="ngModel" >
+                                    <option class='option' *ngFor='let option of customers' [value]="option.viewValue">{{option.viewValue}}</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="loanStatus">Loan Status:</label>
+                                <select class='select-option form-control' name="loanStatus" required [(ngModel)]='model.loanStatus' #loanStatus="ngModel" >
+                                    <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-block">Edit</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
