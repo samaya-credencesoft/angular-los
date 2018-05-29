@@ -10,6 +10,7 @@ import { BranchMaster } from '../../components/los_masters/branch-master/BranchM
 import { DepartmentMaster } from '../../components/los_masters/department-master/DepartmentMaster';
 import { ManufactureMaster } from '../../components/los_masters/manufacture-master/ManufactureMaster';
 import { SupplierMaster } from '../../components/los_masters/supplier-master/SupplierMaster';
+import { SourcingMaster } from '../../components/los_masters/sourcing-master/SourcingMaster';
 
 import {API_URL} from '../../app.component';
 
@@ -79,7 +80,7 @@ export class AuthService {
 
         return this.http.post(API_URL + '/departmentMasterDetails', department)
         .map(response => response.json() as DepartmentMaster)
-        .map(branc => !DepartmentMaster.isNull(department))
+        .map(department => !DepartmentMaster.isNull(department))
         .catch(AuthService.handleError);
     }
 
@@ -87,7 +88,7 @@ export class AuthService {
 
         return this.http.post(API_URL + '/manufactureMasterDetails', manufacture)
         .map(response => response.json() as ManufactureMaster)
-        .map(branc => !ManufactureMaster.isNull(manufacture))
+        .map(manufacture => !ManufactureMaster.isNull(manufacture))
         .catch(AuthService.handleError);
     }
 
@@ -95,7 +96,15 @@ export class AuthService {
 
         return this.http.post(API_URL + '/supplierMasterDetails', supplier)
         .map(response => response.json() as SupplierMaster)
-        .map(branc => !SupplierMaster.isNull(supplier))
+        .map(supplier => !SupplierMaster.isNull(supplier))
+        .catch(AuthService.handleError);
+    }
+
+    sourcingMasterDetails(sourcing:SourcingMaster){
+
+        return this.http.post(API_URL + '/sourcingMasterDetails', sourcing)
+        .map(response => response.json() as SourcingMaster)
+        .map(sourcing => !SourcingMaster.isNull(sourcing))
         .catch(AuthService.handleError);
     }
 
