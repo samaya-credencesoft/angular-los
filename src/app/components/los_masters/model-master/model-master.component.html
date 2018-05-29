@@ -15,35 +15,35 @@
         </div>
         <div class="modal-body">
 
-
+          <form (ngSubmit)="modelMasterDetails(modelMasterForm.value)" #modelMasterForm="ngForm">
             <div class="form-group">
 								<label>Model Name</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" [(ngModel)]="model.modelName" #modelName="ngModel" placeholder="Model Name" name="modelName">
             </div>
             <div class="form-group">
                 <label>Sub Model</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="optionsRadios" checked="true">
+                      <input type="radio" [(ngModel)]="model.subModel" value="VXI" name="subModel" checked="true">
                       VXI
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" [(ngModel)]="model.subModel" value="ZXI" name="subModel">
                       ZXI
                     </label>
                   </div>
             </div>
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <button class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Select Manufacturer <b class="caret"></b></button>
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li class="dropdown-header">Manufacturer Name</li>
                   <li><a href="#pablo">Demo</a></li>
                 </ul>
-            </div>
+            </div> -->
             <button class="btn btn-danger btn-round">
               Save
             </button>
-        
+          </form>
         
         </div>
       </div>

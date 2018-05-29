@@ -11,6 +11,7 @@ import { DepartmentMaster } from '../../components/los_masters/department-master
 import { ManufactureMaster } from '../../components/los_masters/manufacture-master/ManufactureMaster';
 import { SupplierMaster } from '../../components/los_masters/supplier-master/SupplierMaster';
 import { SourcingMaster } from '../../components/los_masters/sourcing-master/SourcingMaster';
+import { ModelMaster } from '../../components/los_masters/model-master/ModelMaster';
 
 import {API_URL} from '../../app.component';
 
@@ -107,5 +108,14 @@ export class AuthService {
         .map(sourcing => !SourcingMaster.isNull(sourcing))
         .catch(AuthService.handleError);
     }
+
+    modelMasterDetails(model:ModelMaster){
+
+        return this.http.post(API_URL + '/modelMasterDetails', model)
+        .map(response => response.json() as ModelMaster)
+        .map(model => !ModelMaster.isNull(model))
+        .catch(AuthService.handleError);
+    }
+
 
 }
