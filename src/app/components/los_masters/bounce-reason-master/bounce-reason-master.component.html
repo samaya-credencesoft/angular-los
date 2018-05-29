@@ -1,0 +1,45 @@
+<app-base></app-base>
+<div class="dashboard-content">
+  <button style="margin:50px" class="btn btn-default" data-toggle="modal" data-target="#demoModal">
+      Bounce Reson Form
+  </button>
+</div>
+
+<!--DEMO MODAL -->
+<div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notice">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+          <h5 class="modal-title" id="myModalLabel">Bounce Reson Master</h5>
+        </div>
+        <div class="modal-body">
+
+          <form (ngSubmit)="bounceReasonMasterDetails(bounceReasonMaster.value)" #bounceReasonMaster="ngForm">
+            <div class="form-group">
+								<label>Reason</label>
+								<input type="text" ngModel #reason="ngModel" name="reason" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Charges</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" ngModel #optionsRadios="ngModel" value="active" checked="true">
+                      Yes
+                    </label>
+                    <label>
+                      <input type="radio" ngModel #optionsRadios="ngModel" value="inactive" name="optionsRadios">
+                      No
+                    </label>
+                  </div>
+            </div>
+            <button class="btn btn-danger btn-round">
+              Save
+            </button>
+          </form>
+        
+        </div>
+      </div>
+    </div>
+  </div>  
+<!--  End Modal -->

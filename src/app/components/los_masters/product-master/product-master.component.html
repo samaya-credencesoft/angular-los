@@ -1,0 +1,120 @@
+<app-base></app-base>
+<div class="dashboard-content">
+  <button style="margin:50px" class="btn btn-default" data-toggle="modal" data-target="#demoModal">
+      Product Form
+  </button>
+</div>
+
+<!--DEMO MODAL -->
+<div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notice">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+          <h5 class="modal-title" id="myModalLabel">Product Master</h5>
+        </div>
+        <div class="modal-body">
+
+          <form (ngSubmit)="productMasterDetails(productMasterForm.value)" #productMasterForm="ngForm">
+            <div class="form-group">
+								<label>Product Name</label>
+								<input type="text" class="form-control" [(ngModel)]="model.productName" #productName="ngModel" placeholder="Product Name" name="productName">
+            </div>
+            <div class="form-group">
+                <label>Product Code</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="productCode" [(ngModel)]="model.productCode" value="PL" checked="true">
+                      PL
+                    </label>
+                    <label>
+                      <input type="radio" [(ngModel)]="model.productCode" value="HL" name="productCode">
+                      HL
+                    </label>
+                    <label>
+                      <input type="radio" [(ngModel)]="model.productCode" value="BL" name="productCode">
+                      BL
+                    </label>
+                    <label>
+                      <input type="radio" [(ngModel)]="model.productCode" value="EL" name="productCode">
+                      EL
+                    </label>
+                    <label>
+                      <input type="radio" [(ngModel)]="model.productCode" value="EP" name="productCode">
+                      EP
+                    </label>
+                  </div>
+            </div>
+            <div class="form-group">
+                <label>Revolving</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="revolving" [(ngModel)]="model.revolving" value="Yes" checked="true">
+                      Yes
+                    </label>
+                    <label>
+                      <input type="radio" name="revolving" [(ngModel)]="model.revolving" value="No">
+                      No
+                    </label>
+                  </div>
+            </div>
+            <div class="form-group">
+                <label>Interest Per Year</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="interestPerYear" [(ngModel)]="model.interestPerYear" value="360" checked="true">
+                      360
+                    </label>
+                    <label>
+                      <input type="radio" name="interestPerYear" [(ngModel)]="model.interestPerYear" value="Actual">
+                      Actual
+                    </label>
+                    <label>
+                      <input type="radio" name="interestPerYear" [(ngModel)]="model.interestPerYear" value="365">
+                      365
+                    </label>
+                  </div>
+            </div>
+            <div class="form-group">
+                <label>Interest Per Month</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="interestPerMonth" [(ngModel)]="model.interestPerMonth" value="360" checked="true">
+                      360
+                    </label>
+                    <label>
+                      <input type="radio" name="interestPerMonth" [(ngModel)]="model.interestPerMonth" value="Actual">
+                      Actual
+                    </label>
+                    <label>
+                      <input type="radio" name="interestPerMonth" [(ngModel)]="model.interestPerMonth" value="365">
+                      365
+                    </label>
+                  </div>
+            </div>
+            <div class="form-group">
+                <label>Active</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="active" [(ngModel)]="model.active" value="Yes" checked="true">
+                      Yes
+                    </label>
+                    <label>
+                      <input type="radio" name="active" [(ngModel)]="model.active" value="No">
+                      No
+                    </label>
+                  </div>
+            </div>
+            <button class="btn btn-danger btn-round">
+              Save
+            </button>
+          </form>
+          
+
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>  
+<!--  End Modal -->

@@ -6,6 +6,14 @@ import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
 
 import {User} from '../../components/authentication_components/signup/user';
+import { BranchMaster } from '../../components/los_masters/branch-master/BranchMaster';
+import { DepartmentMaster } from '../../components/los_masters/department-master/DepartmentMaster';
+import { ManufactureMaster } from '../../components/los_masters/manufacture-master/ManufactureMaster';
+import { SupplierMaster } from '../../components/los_masters/supplier-master/SupplierMaster';
+import { SourcingMaster } from '../../components/los_masters/sourcing-master/SourcingMaster';
+import { ModelMaster } from '../../components/los_masters/model-master/ModelMaster';
+import { ProductMaster } from '../../components/los_masters/product-master/ProductMaster';
+
 import {API_URL} from '../../app.component';
 
 
@@ -43,7 +51,7 @@ export class AuthService {
                     this.router.navigate(['signup']);
                 }
                   });
-    
+
     }
 
 
@@ -59,6 +67,64 @@ export class AuthService {
             .map(currentUser => !User.isNull(currentUser))
             .catch(AuthService.handleError);
     }
+
+    branchMasterDetails(branc:BranchMaster){
+
+        return this.http.post(API_URL + '/branchMasterDetails', branc)
+        .map(response => response.json() as BranchMaster)
+        .map(branc => !BranchMaster.isNull(branc))
+        .catch(AuthService.handleError);
+    }
+
+
+    departmentMasterDetails(department:DepartmentMaster){
+
+        return this.http.post(API_URL + '/departmentMasterDetails', department)
+        .map(response => response.json() as DepartmentMaster)
+        .map(department => !DepartmentMaster.isNull(department))
+        .catch(AuthService.handleError);
+    }
+
+    manufactureMasterDetails(manufacture:ManufactureMaster){
+
+        return this.http.post(API_URL + '/manufactureMasterDetails', manufacture)
+        .map(response => response.json() as ManufactureMaster)
+        .map(manufacture => !ManufactureMaster.isNull(manufacture))
+        .catch(AuthService.handleError);
+    }
+
+    supplierMasterDetails(supplier:SupplierMaster){
+
+        return this.http.post(API_URL + '/supplierMasterDetails', supplier)
+        .map(response => response.json() as SupplierMaster)
+        .map(supplier => !SupplierMaster.isNull(supplier))
+        .catch(AuthService.handleError);
+    }
+
+    sourcingMasterDetails(sourcing:SourcingMaster){
+
+        return this.http.post(API_URL + '/sourcingMasterDetails', sourcing)
+        .map(response => response.json() as SourcingMaster)
+        .map(sourcing => !SourcingMaster.isNull(sourcing))
+        .catch(AuthService.handleError);
+    }
+
+    modelMasterDetails(model:ModelMaster){
+
+        return this.http.post(API_URL + '/modelMasterDetails', model)
+        .map(response => response.json() as ModelMaster)
+        .map(model => !ModelMaster.isNull(model))
+        .catch(AuthService.handleError);
+    }
+
+    productMasterDetails(product:ProductMaster){
+
+        return this.http.post(API_URL + '/productMasterDetails', product)
+        .map(response => response.json() as ProductMaster)
+        .map(product => !ProductMaster.isNull(product))
+        .catch(AuthService.handleError);
+    }
+
 
 
 }
