@@ -9,7 +9,8 @@ import {SignupComponent} from './components/authentication_components/signup/sig
 import {ResetPasswordComponent} from './components/authentication_components/reset-password/reset-password.component';
 import {ForgotPasswordComponent} from './components/authentication_components/forgot-password/forgot-password.component';
 import { LogoutComponent } from './components/authentication_components/logout/logout.component';
-import {BaseComponent} from './components/base_component/base.component';
+import { BaseComponent } from './components/base_component/base.component';
+import { StateMasterComponent } from './components/los_masters/state-master/state-master.component';
 
 const appRoutes: Routes = [
     // {
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
         component: SignupComponent
     },
     {
-        path: 'resetPassword/:*',
+        path:  'resetPassword/:*',
         component: ResetPasswordComponent
     },
     {
@@ -44,7 +45,11 @@ const appRoutes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent,
-        //canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'stateMaster',
+        component: StateMasterComponent
     },
     {
         path: 'logout',

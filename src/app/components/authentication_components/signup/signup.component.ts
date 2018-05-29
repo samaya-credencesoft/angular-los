@@ -3,6 +3,8 @@ import {Message} from 'primeng/components/common/api';
 
 import {AuthService} from '../../../services/common_services/auth.service';
 import {User} from '../signup/user';
+import { ActivatedRoute, Router, ParamMap, Params } from '@angular/router';
+
 //import '../../../../assets/js/material-bootstrap-wizard.js';
 
 @Component({
@@ -19,7 +21,7 @@ export class SignupComponent implements OnInit {
   model: User;
   messages: Message[] = [];
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,private router: Router) {
   }
 
   ngOnInit(): void {
@@ -35,8 +37,14 @@ export class SignupComponent implements OnInit {
       this.authService
           .register(this.model)
           .subscribe(isRegistered => {
+              // if(isRegistered == true){
+              //   console.log("success response is :"+isRegistered);
+              // }else{
+              //   console.log("error response is :"+isRegistered); 
+              // }
               if (isRegistered) {
                   this.messages.push({severity: 'info', summary: 'Registered successfully!'});
+                 // this.router.navigate(['/signin']);
               } else {
                   this.messages.push({severity: 'error', summary: 'Email already in use'});
               }

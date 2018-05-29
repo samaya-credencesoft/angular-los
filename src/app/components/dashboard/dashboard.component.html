@@ -1,56 +1,6 @@
-<body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-        <a class="navbar-brand" href="#" data-toggle="tooltip" title="LOS">Loan Originating System</a>
-        <a class="navbar-brand"  data-toggle="tooltip" title="" (click)="toggle()"><i class="fa fa-stack-exchange" style="font-size: 24px;"></i></a>
-        </div>
-       
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-toggle="tooltip" title="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-toggle="tooltip" title="settings"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
-        </ul>
-    </div>
-</nav>
+<app-base></app-base>
 
-<aside class="sidebar-dashboard" *ngIf="show" >
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1" title="Master CreationA">
-                <h4 class="panel-title">
-                    <span><i class="fa fa-user-plus" aria-hidden="true"></i></span><span>&nbsp; &nbsp; &nbsp;</span>     
-                    <a data-toggle="tooltip" title="master-creation">Master Creation<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                </h4>
-            </div>
-            <div id="collapse1" class="panel-collapse collapse in">
-            <div class="panel-body">
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span>First item</li>
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span>Second item</li>
-                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i><span>&nbsp; &nbsp; &nbsp;</span></span>Third item</li>
-            </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2" title="Dashboard">
-                <h4 class="panel-title">
-                    <span><i class="fa fa-dashboard" ></i></span><span>&nbsp; &nbsp; &nbsp;</span>
-                    <a data-toggle="tooltip" title="dashboard">Dashboard<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
-                </h4>
-            </div>
-            <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">
-                <li class="list-group-item">First item</li>
-                <li class="list-group-item">Second item</li>
-                <li class="list-group-item">Third item</li>
-            </div>
-            </div>
-        </div>
-    </div> 
-</aside>
-
-<div class="dashboard-content">
+<div class="dashboard-content" [ngClass]="{'content_box': isClassVisible}" >
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 widgets-container" title="Display User">
@@ -92,11 +42,35 @@
         </div>
         <!-- DataTable -->
         <div class="row">
-            <div id="" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 top30  ">
-                <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered" style="width:100%"></table>
+            <div  id="" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 top30  ">
+                <table  datatable [dtOptions]="dtOptions"  class="table table-striped table-bordered" style="width:100%"></table>
             </div>
         </div>
 
     </div>
 </div>
-</body>
+
+
+
+
+
+<!--Applicant Edit MODAL -->
+<div class="modal fade" id="editApplicant" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notice">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
+                <h5 class="modal-title" id="myModalLabel">demo_title</h5>
+            </div>
+            <div class="modal-body">
+                <p>Hello World</p>
+            </div>
+        </div>
+    </div>
+</div>  
+<!--  End Modal -->
+
+  
+
+
+

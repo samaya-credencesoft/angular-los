@@ -1,3 +1,4 @@
+import { DashboardService } from './services/dashboard_services/dashboard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppMaterialModules } from './material.module';
@@ -31,6 +32,7 @@ import { LogoutComponent } from './components/authentication_components/logout/l
 import {confirmEqualPasswordValidator } from './services/common_services/confirm-equal-passwords-validator.directive';
 import {BaseComponent} from './components/base_component/base.component';
 import { DataTablesModule } from 'angular-datatables';
+import { StateMasterComponent } from './components/los_masters/state-master/state-master.component';
 
 @NgModule({
   imports: [
@@ -62,13 +64,15 @@ import { DataTablesModule } from 'angular-datatables';
      ForgotPasswordComponent,
      LogoutComponent,
      confirmEqualPasswordValidator,
-     BaseComponent
+     BaseComponent,
+     StateMasterComponent
     ],
   bootstrap: [AppComponent],
   providers:[
     Logger,
     AddressService,
     CustomerOnboardingService,
+    DashboardService,
     AuthService,
     AuthGuard
   ]

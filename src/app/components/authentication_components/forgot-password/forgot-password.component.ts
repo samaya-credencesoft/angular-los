@@ -37,29 +37,30 @@ export class ForgotPasswordComponent implements OnInit {
    
   password : any;
   email : boolean;
-  emailPattern = "/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/";
+  //emailPattern = "/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/";
 
 
 ngOnInit() {
-   // this.selectedId = this.route.snapshot.queryParamMap.get("id");
+   
   }
  
 
   //forgot password function
   forgotPassword(email_val)
   {
-    console.log(email_val);
+    // console.log(API_URL);
+    // console.log(email_val);
       this.http.post(this.FORGOT_PASSWORD_API, email_val).map(res => res.json()).subscribe((response)=>{
         console.log(response);
-        if(response.result === "success")
-        {
-          console.log("reset password link sent to tour email id");
-          this.router.navigate(['signin']);
-        }
-        else
-        {
-          console.log("email id doesn't exist");
-        }
+        // if(response.result === "success")
+        // {
+        //   console.log("reset password link sent to your email id");
+        //   this.router.navigate(['signin']);
+        // }
+        // else
+        // {
+        //   console.log("email id doesn't exist");
+        // }
       });
 
   }  

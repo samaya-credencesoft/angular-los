@@ -23,14 +23,14 @@ export class CustomerOnboardingService {
         private http:Http
     ){}
 
-    public LOAN_APPLICATION_API = API_URL+ '/saveLoanApplication';
+    public LOAN_APPLICATION_API = API_URL+ '/newLoanApplication';
     public createLoanApplication(loanApplication:LoanApplication) {
         console.log(LoanApplication);
           return this.http.post(this.LOAN_APPLICATION_API, loanApplication).subscribe
           ( 
             data => {
                 this.logger.log(data.json)
-            alert("User created successfully.");
+           // alert("User created successfully.");
           });
   
     };

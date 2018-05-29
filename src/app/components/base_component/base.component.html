@@ -1,1 +1,76 @@
-<h1>welcome to base componet</h1>>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#" data-toggle="tooltip" title="LOS">{{ logo }}</a>
+        <a class="navbar-brand"  data-toggle="tooltip" title="" (click)="changeShowStatus()"><i class="fa fa-stack-exchange" style="font-size: 24px;"></i></a>
+        </div>
+       
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/" (click)="logout($event)" data-target="#logoutModal" data-toggle="tooltip modal" title="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" data-toggle="tooltip" title="settings"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</nav>
+
+<aside class="sidebar-dashboard side-nav"  [ngClass]="{'sidebar': isClassVisible, 'sidebar_mob': isMobClassVissible}" >
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1" title="Master CreationA">
+                <h4 class="panel-title">
+                    <span><i class="fa fa-user-plus" aria-hidden="true"></i></span>     
+                    <a data-toggle="tooltip"  title="master-creation" *ngIf ="show"><span class="mob_none">&nbsp; &nbsp; &nbsp;Master Creation<i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i></span><span *ngIf ="show" class="mob_none">&nbsp; &nbsp; &nbsp;First item</span></li>
+                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i></span><span *ngIf ="show" class="mob_none">&nbsp; &nbsp; &nbsp;Second item</span></li>
+                <li class="list-group-item"><span><i class="fa fa-address-book" aria-hidden="true"></i></span><span *ngIf ="show" class="mob_none">&nbsp; &nbsp; &nbsp;Third item</span></li>
+            </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2" title="Dashboard">
+                <h4 class="panel-title">
+                    <span><i class="fa fa-dashboard" ></i></span>
+                    <a data-toggle="tooltip" title="dashboard" *ngIf ="show"><span class="mob_none">&nbsp; &nbsp; &nbsp;Dashboard<i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <li class="list-group-item">First item</li>
+                <li class="list-group-item">Second item</li>
+                <li class="list-group-item">Third item</li>
+            </div>
+            </div>
+        </div>
+    </div> 
+</aside>
+
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Logout Response</h5> -->
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <!-- <div class="modal-body">
+          <span>You have successfully logout !</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><a [routerLink]="['/signin']">close</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+   -->
