@@ -12,6 +12,7 @@ import { ManufactureMaster } from '../../components/los_masters/manufacture-mast
 import { SupplierMaster } from '../../components/los_masters/supplier-master/SupplierMaster';
 import { SourcingMaster } from '../../components/los_masters/sourcing-master/SourcingMaster';
 import { ModelMaster } from '../../components/los_masters/model-master/ModelMaster';
+import { ProductMaster } from '../../components/los_masters/product-master/ProductMaster';
 
 import {API_URL} from '../../app.component';
 
@@ -114,6 +115,14 @@ export class AuthService {
         return this.http.post(API_URL + '/modelMasterDetails', model)
         .map(response => response.json() as ModelMaster)
         .map(model => !ModelMaster.isNull(model))
+        .catch(AuthService.handleError);
+    }
+
+    productMasterDetails(product:ProductMaster){
+
+        return this.http.post(API_URL + '/productMasterDetails', product)
+        .map(response => response.json() as ProductMaster)
+        .map(product => !ProductMaster.isNull(product))
         .catch(AuthService.handleError);
     }
 
