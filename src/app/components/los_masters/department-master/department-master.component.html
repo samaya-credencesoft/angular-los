@@ -15,48 +15,48 @@
         </div>
         <div class="modal-body">
 
-
+          <form (ngSubmit)="departmentMasterDetails(departmentMasterForm.value)" #departmentMasterForm="ngForm">
             <div class="form-group">
                 <label>Department Name</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="optionsRadios" checked="true">
+                      <input type="radio" [(ngModel)]="model.departmentName" name="departmentName" value="Finance" checked="true">
                       Finance
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" [(ngModel)]="model.departmentName" value="IT" name="departmentName">
                       IT
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" [(ngModel)]="model.departmentName" value="Operation" name="departmentName">
                       Operation
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" [(ngModel)]="model.departmentName" value="Credit" name="departmentName">
                       Credit
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" [(ngModel)]="model.departmentName" value="Business" name="departmentName">
                       Business
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" [(ngModel)]="model.departmentName" value="Product" name="departmentName">
                       Product
                     </label>
                     <label>
-                      <input type="radio" name="optionsRadios">
+                      <input type="radio" [(ngModel)]="model.departmentName" value="HR" name="departmentName">
                       HR
                     </label>
                   </div>
             </div>
             <div class="form-group">
 								<label>Serial Number</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.serialNumber" #serialNumber="ngModel" placeholder="Serial Number" name="serialNumber">
             </div>
             <button class="btn btn-danger btn-round">
               Save
             </button>
-        
+          </form>
         
         </div>
       </div>
