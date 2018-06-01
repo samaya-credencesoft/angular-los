@@ -13,6 +13,9 @@ import { SupplierMaster } from '../../components/los_masters/supplier-master/Sup
 import { SourcingMaster } from '../../components/los_masters/sourcing-master/SourcingMaster';
 import { ModelMaster } from '../../components/los_masters/model-master/ModelMaster';
 import { ProductMaster } from '../../components/los_masters/product-master/ProductMaster';
+import { SalesmanagerMaster } from '../../components/los_masters/salesmanager-master/SalesmanagerMaster';
+import { BounceReasonMaster } from '../../components/los_masters/bounce-reason-master/BounceReasonMaster';
+import { SchemeMaster } from '../../components/los_masters/scheme-master/SchemeMaster';
 
 import {API_URL} from '../../app.component';
 
@@ -123,6 +126,30 @@ export class AuthService {
         return this.http.post(API_URL + '/productMasterDetails', product)
         .map(response => response.json() as ProductMaster)
         .map(product => !ProductMaster.isNull(product))
+        .catch(AuthService.handleError);
+    }
+
+    salesmanagerMasterDetails(salesmanager:SalesmanagerMaster){
+
+        return this.http.post(API_URL + '/salesmanagerMasterDetails', salesmanager)
+        .map(response => response.json() as SalesmanagerMaster)
+        .map(salesmanager => !SalesmanagerMaster.isNull(salesmanager))
+        .catch(AuthService.handleError);
+    }
+
+    bounceReasonMasterDetails(bounceReason:BounceReasonMaster){
+
+        return this.http.post(API_URL + '/bounceReasonMasterDetails', bounceReason)
+        .map(response => response.json() as BounceReasonMaster)
+        .map(bounceReason => !BounceReasonMaster.isNull(bounceReason))
+        .catch(AuthService.handleError);
+    }
+
+    schemeMasterDetails(scheme:SchemeMaster){
+
+        return this.http.post(API_URL + '/schemeMasterDetails', scheme)
+        .map(response => response.json() as SchemeMaster)
+        .map(scheme => !SchemeMaster.isNull(scheme))
         .catch(AuthService.handleError);
     }
 

@@ -17,7 +17,7 @@ import { DistrictMasterComponent } from './components/los_masters/district-maste
 import { CountryMasterComponent } from './components/los_masters/country-master/country-master.component';
 import { RegionMasterComponent } from './components/los_masters/region-master/region-master.component';
 import { BranchMasterComponent } from './components/los_masters/branch-master/branch-master.component';
-//import { SalesManagerMasterComponent } from './components/los_masters/sales-manager-master/sales-manager-master.component';
+import { SalesmanagerMasterComponent } from './components/los_masters/salesmanager-master/salesmanager-master.component';
 import { SourcingMasterComponent } from './components/los_masters/sourcing-master/sourcing-master.component';
 import { SupplierMasterComponent } from './components/los_masters/supplier-master/supplier-master.component';
 import { ManufactureMasterComponent } from './components/los_masters/manufacture-master/manufacture-master.component';
@@ -86,10 +86,10 @@ const appRoutes: Routes = [
         path: 'branchMaster',
         component: BranchMasterComponent
     },
-    // {
-    //     path: 'salesmanagerMaster',
-    //     component: SalesManagerMasterComponent
-    // },
+    {
+        path: 'salesmanagerMaster',
+        component: SalesmanagerMasterComponent
+    },
     {
         path: 'sourcingMaster',
         component: SourcingMasterComponent
