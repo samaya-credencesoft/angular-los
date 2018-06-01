@@ -9,32 +9,32 @@ import {
   Headers,
   HttpModule
   } from '@angular/http';
-  import { BounceReasonMaster } from './BounceReasonMaster';
+  import { SalesmanagerMaster } from './SalesmanagerMaster';
   import { HttpErrorResponse } from '@angular/common/http';
   import {ErrorStateMatcher} from '@angular/material/core';
 
 @Component({
-  selector: 'app-bounce-reason-master',
-  templateUrl: './bounce-reason-master.component.html',
-  styleUrls: ['./bounce-reason-master.component.css']
+  selector: 'app-salesmanager-master',
+  templateUrl: './salesmanager-master.component.html',
+  styleUrls: ['./salesmanager-master.component.css']
 })
-export class BounceReasonMasterComponent implements OnInit {
-  model: BounceReasonMaster;
+export class SalesmanagerMasterComponent implements OnInit {
+  model: SalesmanagerMaster;
   messages: Message[] = [];
 
   constructor(private authService: AuthService) { 
-    this.model = new BounceReasonMaster();
+    this.model = new SalesmanagerMaster();
   }
 
   ngOnInit() {
   }
 
-  bounceReasonMasterDetails(details){
+  salesmanagerMasterDetails(details){
     console.log(this.model);
     this.authService
-          .bounceReasonMasterDetails(this.model)
-          .subscribe(isBounceReasonMasterDetails => {
-              if (isBounceReasonMasterDetails) {
+          .salesmanagerMasterDetails(this.model)
+          .subscribe(isSalesmanagerMasterDetails => {
+              if (isSalesmanagerMasterDetails) {
                   this.messages.push({severity: 'info', summary: 'Inserted successfully!'});
               } else {
                   this.messages.push({severity: 'error', summary: 'Not inserted'});

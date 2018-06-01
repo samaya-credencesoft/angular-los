@@ -15,100 +15,104 @@
         </div>
         <div class="modal-body">
 
-
+          <form (ngSubmit)="schemeMasterDetails(schemeMasterForm.value)" #schemeMasterForm="ngForm">
             <div class="form-group">
 								<label>Scheme Name</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" [(ngModel)]="model.schemeName" #schemeName="ngModel" placeholder="Scheme Name" name="schemeName">
             </div>
             <div class="form-group">
 								<label>Scheme Code</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" [(ngModel)]="model.schemeCode" #schemeCode="ngModel" placeholder="Scheme Code" name="schemeCode">
             </div>
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <button class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Product <b class="caret"></b></button>
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li class="dropdown-header">Product List</li>
                   <li><a href="#pablo">Demo</a></li>
                 </ul>
-            </div>
+            </div> -->
             <div class="form-group">
 								<label>Minimum Loan Amount</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.minimumLoanAmount" #minimumLoanAmount="ngModel" placeholder="Minimum Loan Amount" name="minimumLoanAmount">
             </div>
             <div class="form-group">
 								<label>Maximum Loan Amount</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.maximumLoanAmount" #maximumLoanAmount="ngModel" placeholder="Maximum Loan Amount" name="maximumLoanAmount">
             </div>
             <div class="form-group">
 								<label>Minimum Tenure</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.minimumTenure" #minimumTenure="ngModel" placeholder="Minimum Tenure" name="minimumTenure">
             </div>
             <div class="form-group">
 								<label>Maximum Tenure</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.maximumTenure" #maximumTenure="ngModel" placeholder="Maximum Tenure" name="maximumTenure">
             </div>
             <div class="form-group">
 								<label>Minimum Effective Interest Rate</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.minimumEffectiveInterestRate" #minimumEffectiveInterestRate="ngModel" placeholder="Minimum Effective Interest Rate" name="minimumEffectiveInterestRate">
             </div>
             <div class="form-group">
 								<label>Maximum Effective Interest Rate</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.maximumEffectiveInterestRate" #maximumEffectiveInterestRate="ngModel" placeholder="Maximum Effective Interest Rate" name="maximumEffectiveInterestRate">
             </div>
             <div class="form-group">
 								<label>Minimum Flat Rate</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.minimumFlatRate" #minimumFlatRate="ngModel" placeholder="Minimum Flat Rate" name="minimumFlatRate">
             </div>
             <div class="form-group">
 								<label>Maximum Flat Rate</label>
-								<input type="number" class="form-control">
+								<input type="number" class="form-control" [(ngModel)]="model.maximumFlatRate" #maximumFlatRate="ngModel" placeholder="Maximum Flat Rate" name="maximumFlatRate">
             </div>
             <div class="form-group">
                 <label>Rate Method</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="rateMethodRadios" checked="true">
+                      <input type="radio" name="rateMethod" checked="true" [(ngModel)]="model.rateMethod" value="Floating">
                       Floating
                     </label>
                     <label>
-                      <input type="radio" name="rateMethodRadios">
+                      <input type="radio" name="rateMethod" [(ngModel)]="model.rateMethod" value="Fixed">
                       Fixed
                     </label>
+                  </div>
             </div>
             <div class="form-group">
                 <label>Rate Type</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="rateTypeRadios" checked="true">
+                      <input type="radio" name="rateType" checked="true" [(ngModel)]="model.rateType" value="Effective">
                       Effective
                     </label>
                     <label>
-                      <input type="radio" name="rateTypeRadios">
+                      <input type="radio" name="rateType" [(ngModel)]="model.rateType" value="Flat">
                       Flat
                     </label>
+                  </div>
             </div>
-            <div class="dropdown">
+            <!-- <div class="dropdown">
                 <button class="dropdown-toggle btn btn-primary btn-round btn-block" data-toggle="dropdown">Charge Code <b class="caret"></b></button>
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li class="dropdown-header">Charge Code List</li>
                   <li><a href="#pablo">Demo</a></li>
                 </ul>
-            </div>
+            </div> -->
             <div class="form-group">
                 <label>Reschedulement</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="reschedulementRadios" checked="true">
+                      <input type="radio" name="reschedulement" checked="true" [(ngModel)]="model.reschedulement" value="Yes">
                       Yes
                     </label>
                     <label>
-                      <input type="radio" name="reschedulementRadios">
+                      <input type="radio" name="reschedulement" [(ngModel)]="model.reschedulement" value="No">
                       No
                     </label>
+                  </div>
             </div>
             <button class="btn btn-danger btn-round">
               Save
             </button>
+          </form>
 
         
         
