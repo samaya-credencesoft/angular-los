@@ -98,10 +98,20 @@
                                  placeholder="Mobile Number" >
                             </mat-form-field>
                 </div>
+                <div>
+                    <mat-form-field class="center4">
+                            <mat-select placeholder="Designation" #designation="ngModel" [(ngModel)]="model.designation" name="designation" >
+                              <mat-option *ngFor="let designation of designations"   [value]="designation.value">
+                                {{ designation.viewValue }}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          
+            </div>
                 </div>
                     <div class="register-button">
                         <!--[disabled]="!registerForm.valid"-->
-                        <button  type="submit"  [disabled]="!registerForm.valid"  class="btn btn-danger btn-round" data-toggle="modal" data-target="#registrationModal">
+                        <button  type="submit"  [disabled]="!registerForm.valid"  class="btn btn-danger btn-round" data-toggle="modal" data-target="#signupModal">
                                 Sign Up
                         </button>
                     </div>
@@ -123,3 +133,25 @@
         </div>
     </div>
 </div></div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Signup Response</h5>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <div class="modal-body">
+          <span>You have successfully signup. A password link has been sent to your mail id. Please set the password and signin !</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><a [routerLink]="['/signin']">close</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

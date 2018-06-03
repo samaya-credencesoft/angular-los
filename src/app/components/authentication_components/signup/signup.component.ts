@@ -4,6 +4,7 @@ import {Message} from 'primeng/components/common/api';
 import {AuthService} from '../../../services/common_services/auth.service';
 import {User} from '../signup/user';
 //import '../../../../assets/js/material-bootstrap-wizard.js';
+import { ActivatedRoute, Router, ParamMap, Params } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -19,8 +20,8 @@ export class SignupComponent implements OnInit {
   model: User;
   messages: Message[] = [];
 
-  constructor(private authService: AuthService) {
-  }
+  constructor(private authService: AuthService,private router: Router) {
+}
 
   ngOnInit(): void {
       this.model = new User();

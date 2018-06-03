@@ -7,10 +7,11 @@ export class User {
     password: string;
     firstname: string;
     lastname: string;
-    mobileNumber: number;
+    mobileNumber: string;
     companyName: string;
     uuid: string;
     status: string;
+    designation : string;
 
     constructor() {
     }
@@ -22,7 +23,8 @@ export class User {
             user.companyName === null &&
             user.firstname === null &&
             user.lastname === null &&
-            user.uuid == null 
+            user.uuid == null &&
+            user.designation == null 
             
     }
 }
