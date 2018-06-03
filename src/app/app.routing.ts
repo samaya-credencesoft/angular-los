@@ -1,7 +1,7 @@
 import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {LoginComponent} from './components/authentication_components/login/login.component';
-// import {HomeComponent} from './home/home.component';
+import {HomeComponent} from './home/home.component';
 import {AuthGuard} from './services/common_services/auth-guard.service';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {LoanApplicationNew} from './components/los_application/newloanapplication.component';
@@ -30,13 +30,12 @@ import { UserManagementComponent } from './components/user-management/user-manag
 
 
 const appRoutes: Routes = [
-    // {
-    //     path: 'home',
-    //     component: HomeComponent,
-    //     canActivate: [AuthGuard]
-    // },
     {
         path: '',
+        component: HomeComponent
+    },
+    {
+        path: 'loanapp',
         component: LoanApplicationNew
     },
     {
