@@ -20,7 +20,7 @@ import { AddressService } from './services/common_services/address.service';
 import { CustomerOnboardingService } from './services/los_application_services/los.loanapplication.service';
 import { LoginComponent } from './components/authentication_components/login/login.component';
 import { SignupComponent } from './components/authentication_components/signup/signup.component';
-// import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {AuthService} from './services/common_services/auth.service';
 import {AuthGuard} from './services/common_services/auth-guard.service';
@@ -71,7 +71,7 @@ import { SchemeMasterComponent } from './components/los_masters/scheme-master/sc
      LoanApplicationNew,
      LoginComponent,
      SignupComponent,
-     // HomeComponent,
+     HomeComponent,
      DashboardComponent,
      AppComponent,
      ResetPasswordComponent,
